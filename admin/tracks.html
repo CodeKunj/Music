@@ -189,7 +189,7 @@
 
 <script type="module">
   import { requireAuth, signOut, getSession } from './js/admin-auth.js';
-  import { getAllTracks, createTrack, updateTrack, deleteTrack } from './js/admin-api.js';
+  import { getAllTracks, createTrack, updateTrack, deleteTrack, uploadFileToSupabase } from './js/admin-api.js';
   import { toast, confirm, openModal, closeModal, initUploadZone, showSkeletonRows, setActiveSidebarLink, initMobileSidebar, createAudioPreview } from './js/admin-ui.js';
 
   await requireAuth();
@@ -234,14 +234,39 @@
     btn.textContent = editingId ? 'Updating…' : 'Uploading…';
 
     try {
-      const form = new FormData(document.getElementById('track-form'));
-      form.set('is_featured', document.getElementById('f-featured').checked ? 'true' : 'false');
+      const formEl = document.getElementById('track-form');
+      const formData = new FormData(formEl);
+      
+      const payload = {
+        title: formData.get('title')?.trim(),
+        artist: formData.get('artist')?.trim(),
+        genre: formData.get('genre')?.trim(),
+        duration: formData.get('duration')?.trim(),
+        description: formData.get('description')?.trim(),
+        is_featured: document.getElementById('f-featured').checked
+      };
+
+      // Handle Cover Upload
+      const coverFile = formEl.querySelector('input[name="cover"]').files[0];
+      if (coverFile) {
+        btn.textContent = 'Uploading cover...';
+        payload.cover_url = await uploadFileToSupabase(coverFile, 'covers');
+      }
+
+      // Handle Audio Upload
+      const audioFile = formEl.querySelector('input[name="audio"]').files[0];
+      if (audioFile) {
+        btn.textContent = 'Uploading audio...';
+        payload.audio_url = await uploadFileToSupabase(audioFile, 'audio');
+      }
+
+      btn.textContent = editingId ? 'Updating record...' : 'Saving record...';
 
       if (editingId) {
-        await updateTrack(editingId, form);
+        await updateTrack(editingId, payload);
         toast('Track updated successfully!', 'success');
       } else {
-        await createTrack(form);
+        await createTrack(payload);
         toast('Track uploaded successfully!', 'success');
       }
 

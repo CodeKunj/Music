@@ -1,4 +1,4 @@
-import { getSession, signOut } from './admin-auth.js';
+import { getSession, signOut, getSupabaseConfig } from './admin-auth.js';
 
 const API_BASE = '/api/admin';
 
@@ -98,14 +98,57 @@ export function deleteTestimonial(id) {
 export function getAllBAs() {
   return fetchWithAuth('/before-after');
 }
+export async function uploadFileToSupabase(file, bucket) {
+  const session = getSession();
+  const config = getSupabaseConfig();
+  if (!session || !session.access_token) throw new Error('Not authenticated');
+
+  const ext = file.name.split('.').pop() || '';
+  const safeName = file.name.replace(/[^a-zA-Z0-9.-]/g, '_');
+  const filename = `${Date.now()}_${Math.random().toString(36).substring(2,7)}_${safeName}`;
+  const path = `tracks/${filename}`;
+
+  const res = await fetch(`${config.url}/storage/v1/object/${bucket}/${path}`, {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${session.access_token}`,
+      'apikey': config.key,
+      'Content-Type': file.type || 'application/octet-stream'
+    },
+    body: file
+  });
+
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.message || data.error || 'Upload failed');
+  
+  // Return the public URL
+  return `${config.url}/storage/v1/object/public/${bucket}/${path}`;
+}
+
+export function createTrack(data) {
+  return fetchWithAuth('/tracks', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+}
+
+export function updateTrack(id, data) {
+  return fetchWithAuth(`/tracks/${id}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+}
+export function deleteBA(id) {
+  return fetchWithAuth(`/before-after/${id}`, { method: 'DELETE' });
+}
+
 export function createBA(formData) {
   return fetchWithAuth('/before-after', { method: 'POST', body: formData });
 }
 export function updateBA(id, formData) {
   return fetchWithAuth(`/before-after/${id}`, { method: 'PUT', body: formData });
-}
-export function deleteBA(id) {
-  return fetchWithAuth(`/before-after/${id}`, { method: 'DELETE' });
 }
 
 // ─── Contacts ───────────────────────────────────────

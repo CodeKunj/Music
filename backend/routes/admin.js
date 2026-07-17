@@ -67,31 +67,12 @@ router.get('/tracks', async (req, res) => {
 });
 
 // POST /api/admin/tracks — upload new track
-router.post('/tracks', upload.fields(trackFields), async (req, res) => {
+router.post('/tracks', async (req, res) => {
   try {
-    const { title, artist, genre, duration, description, is_featured } = req.body;
+    const { title, artist, genre, duration, description, is_featured, audio_url, cover_url } = req.body;
 
     if (!title?.trim()) {
       return res.status(400).json({ success: false, error: 'Title is required.' });
-    }
-
-    const files = req.files || {};
-    const ts = Date.now();
-
-    // Upload audio file
-    let audio_url = null;
-    if (files.audio?.[0]) {
-      const f = files.audio[0];
-      const name = `tracks/${ts}_${sanitizeFilename(f.originalname)}`;
-      audio_url = await uploadFile('audio', name, f.buffer, f.mimetype);
-    }
-
-    // Upload cover image
-    let cover_url = null;
-    if (files.cover?.[0]) {
-      const f = files.cover[0];
-      const name = `tracks/${ts}_${sanitizeFilename(f.originalname)}`;
-      cover_url = await uploadFile('covers', name, f.buffer, f.mimetype);
     }
 
     // If is_featured=true, unset other featured tracks first
@@ -124,10 +105,10 @@ router.post('/tracks', upload.fields(trackFields), async (req, res) => {
 });
 
 // PUT /api/admin/tracks/:id — update track
-router.put('/tracks/:id', upload.fields(trackFields), async (req, res) => {
+router.put('/tracks/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    const { title, artist, genre, duration, description, is_featured } = req.body;
+    const { title, artist, genre, duration, description, is_featured, audio_url, cover_url } = req.body;
 
     // Fetch existing record
     const { data: existing, error: fetchErr } = await supabase
@@ -140,8 +121,6 @@ router.put('/tracks/:id', upload.fields(trackFields), async (req, res) => {
       return res.status(404).json({ success: false, error: 'Track not found.' });
     }
 
-    const files = req.files || {};
-    const ts    = Date.now();
     const updates = {};
 
     if (title)  updates.title  = title.trim();
@@ -150,20 +129,14 @@ router.put('/tracks/:id', upload.fields(trackFields), async (req, res) => {
     if (duration !== undefined) updates.duration  = duration?.trim()    || null;
     if (description !== undefined) updates.description = description?.trim() || null;
 
-    // Replace audio if new file uploaded
-    if (files.audio?.[0]) {
-      const f = files.audio[0];
+    if (audio_url) {
       await deleteFile('audio', existing.audio_url);
-      const name = `tracks/${ts}_${sanitizeFilename(f.originalname)}`;
-      updates.audio_url = await uploadFile('audio', name, f.buffer, f.mimetype);
+      updates.audio_url = audio_url;
     }
 
-    // Replace cover if new file uploaded
-    if (files.cover?.[0]) {
-      const f = files.cover[0];
+    if (cover_url) {
       await deleteFile('covers', existing.cover_url);
-      const name = `tracks/${ts}_${sanitizeFilename(f.originalname)}`;
-      updates.cover_url = await uploadFile('covers', name, f.buffer, f.mimetype);
+      updates.cover_url = cover_url;
     }
 
     // Handle featured flag
