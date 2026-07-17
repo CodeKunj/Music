@@ -44,3 +44,55 @@ document.addEventListener('DOMContentLoaded', () => {
   setActiveSidebarLink();
   initMobileSidebar();
 });
+
+export function toast(msg, type = 'info') {
+  alert(msg);
+}
+
+export async function confirm(msg) {
+  return window.confirm(msg);
+}
+
+export function openModal(modal) {
+  if (modal) {
+    modal.classList.add('show');
+    modal.style.display = 'flex';
+  }
+}
+
+export function closeModal(modal) {
+  if (modal) {
+    modal.classList.remove('show');
+    modal.style.display = 'none';
+  }
+}
+
+export function initUploadZone(zone, previewEl) {
+  if (!zone) return;
+  const input = zone.querySelector('input[type="file"]');
+  if (!input) return;
+  zone.addEventListener('click', () => input.click());
+  input.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (file && previewEl) {
+      previewEl.style.display = 'block';
+      if (file.type.startsWith('image/')) {
+        previewEl.innerHTML = `<img src="${URL.createObjectURL(file)}" style="max-height:100px;" />`;
+      } else {
+        previewEl.innerHTML = `<span>${file.name}</span>`;
+      }
+    }
+  });
+}
+
+export function showSkeletonRows(tbody, cols, rows = 3) {
+  if (!tbody) return;
+  tbody.innerHTML = Array(rows).fill(`<tr>${Array(cols).fill('<td>Loading...</td>').join('')}</tr>`).join('');
+}
+
+export function createAudioPreview(url) {
+  const div = document.createElement('div');
+  div.innerHTML = `<audio controls src="${url}" style="height:30px;"></audio>`;
+  return div.firstElementChild;
+}
+
