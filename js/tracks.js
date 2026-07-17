@@ -280,7 +280,7 @@ export function renderFeaturedCard(track) {
     coverImg.alt = `${track.title} cover`;
   }
 
-  const playBtn = card.querySelector('.featured-play-btn');
+  const playBtn = card.querySelector('#featured-play-btn');
   playBtn?.addEventListener('click', () => {
     playTrack(track);
   });
