@@ -48,12 +48,7 @@ export function getStats() {
 export function getAllTracks() {
   return fetchWithAuth('/tracks');
 }
-export function createTrack(formData) {
-  return fetchWithAuth('/tracks', { method: 'POST', body: formData }); // formData handles its own content-type
-}
-export function updateTrack(id, formData) {
-  return fetchWithAuth(`/tracks/${id}`, { method: 'PUT', body: formData });
-}
+
 export function deleteTrack(id) {
   return fetchWithAuth(`/tracks/${id}`, { method: 'DELETE' });
 }
