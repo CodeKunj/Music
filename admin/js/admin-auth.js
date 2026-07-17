@@ -52,3 +52,11 @@ export async function requireAuth() {
   }
   return session;
 }
+
+export async function redirectIfLoggedIn() {
+  const session = getSession();
+  if (session && session.access_token) {
+    window.location.href = '/admin/dashboard.html';
+  }
+}
+
