@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Contact Kunj Rana — Book mixing, mastering, or music production services. Get in touch via the form or social media." />
+  <meta name="description"
+    content="Contact Kunj Rana — Book mixing, mastering, or music production services. Get in touch via the form or social media." />
   <meta property="og:title" content="Contact | Kunj Rana Music" />
   <title>Contact | Kunj Rana Music Portfolio</title>
   <link rel="stylesheet" href="css/style.css" />
@@ -12,291 +14,445 @@
   <link rel="stylesheet" href="css/responsive.css" />
   <style>
     .contact-detail-item {
-      display:flex;align-items:flex-start;gap:var(--space-4);
-      padding:var(--space-5);background:var(--color-card);
-      border:1px solid var(--color-border);border-radius:var(--radius-lg);
-      transition:all var(--transition-base);margin-bottom:var(--space-4);
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-4);
+      padding: var(--space-5);
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      transition: all var(--transition-base);
+      margin-bottom: var(--space-4);
     }
+
     .contact-detail-item:hover {
-      border-color:rgba(139,94,60,0.3);transform:translateX(4px);
+      border-color: rgba(139, 94, 60, 0.3);
+      transform: translateX(4px);
     }
+
     .contact-detail-icon {
-      width:44px;height:44px;background:rgba(139,94,60,0.1);
-      border:1px solid rgba(139,94,60,0.2);border-radius:var(--radius-md);
-      display:flex;align-items:center;justify-content:center;
-      color:var(--color-accent);flex-shrink:0;
+      width: 44px;
+      height: 44px;
+      background: rgba(139, 94, 60, 0.1);
+      border: 1px solid rgba(139, 94, 60, 0.2);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-accent);
+      flex-shrink: 0;
     }
-    .contact-detail-icon svg { width:20px;height:20px; }
-    .contact-detail-label { font-size:var(--fs-xs);color:var(--color-text-muted);margin-bottom:2px;text-transform:uppercase;letter-spacing:0.08em; }
-    .contact-detail-value { font-weight:600;font-size:var(--fs-sm);color:var(--color-text); }
-    .contact-detail-value a { color:var(--color-accent);transition:opacity var(--transition-fast); }
-    .contact-detail-value a:hover { opacity:0.8; }
+
+    .contact-detail-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .contact-detail-label {
+      font-size: var(--fs-xs);
+      color: var(--color-text-muted);
+      margin-bottom: 2px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .contact-detail-value {
+      font-weight: 600;
+      font-size: var(--fs-sm);
+      color: var(--color-text);
+    }
+
+    .contact-detail-value a {
+      color: var(--color-accent);
+      transition: opacity var(--transition-fast);
+    }
+
+    .contact-detail-value a:hover {
+      opacity: 0.8;
+    }
   </style>
 </head>
+
 <body>
 
-<!-- NAVBAR -->
-<header>
-  <nav class="navbar" role="navigation" aria-label="Main navigation">
-    <div class="container nav-inner">
-      <a href="index.html" class="nav-logo" aria-label="Kunj Rana Home">
-        <span class="logo-mark" aria-hidden="true">KR</span>
-        <span class="logo-text">Kunj<span class="logo-dot">.</span></span>
-      </a>
-      <ul class="nav-links" role="list">
-        <li><a href="index.html"    class="nav-link">Home</a></li>
-        <li><a href="tracks.html"  class="nav-link">Tracks</a></li>
-        <li><a href="services.html" class="nav-link">Services</a></li>
-        <li><a href="about.html"   class="nav-link">About</a></li>
-        <li><a href="contact.html" class="nav-link active" aria-current="page">Contact</a></li>
-      </ul>
-      <div class="nav-cta">
-        <a href="contact.html" class="btn btn-primary">Hire Me</a>
-        <button class="hamburger" aria-label="Open menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-  </nav>
-  <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation">
-    <a href="index.html" class="nav-link">Home</a><a href="tracks.html" class="nav-link">Tracks</a>
-    <a href="services.html" class="nav-link">Services</a><a href="about.html" class="nav-link">About</a>
-    <a href="contact.html" class="nav-link">Contact</a>
-    <a href="contact.html" class="btn btn-primary">Hire Me</a>
-  </nav>
-</header>
-
-<main>
-
-<!-- PAGE HERO -->
-<section class="page-hero">
-  <div class="container">
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="index.html">Home</a>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
-      <span aria-current="page">Contact</span>
-    </nav>
-    <h1 class="page-hero-title">Let's <span class="highlight">Connect</span></h1>
-    <p class="page-hero-subtitle">
-      Have a project in mind? I'd love to hear about it. Fill out the form below and I'll get back to you within 24 hours.
-    </p>
-  </div>
-</section>
-
-<!-- CONTACT SECTION -->
-<section class="section" style="padding-top:0" aria-labelledby="contact-heading">
-  <div class="container">
-    <div class="contact-grid">
-
-      <!-- Info Column -->
-      <div class="reveal-left">
-        <span class="section-tag" style="margin-bottom:var(--space-6);display:inline-flex;">Get In Touch</span>
-        <h2 class="contact-info" style="font-family:var(--font-heading);font-size:var(--fs-2xl);font-weight:800;margin-bottom:var(--space-4);" id="contact-heading">
-          Ready to Make <span class="highlight">Great Music?</span>
-        </h2>
-        <p style="color:var(--color-text-secondary);line-height:1.8;margin-bottom:var(--space-8);font-size:var(--fs-base);">
-          Whether you need a mix, master, full production, or just want to talk about your project ideas — I'm here and always excited to collaborate with passionate artists.
-        </p>
-
-        <!-- Contact Details -->
-        <div class="contact-details" role="list">
-          <div class="contact-detail-item" role="listitem">
-            <div class="contact-detail-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </div>
-            <div>
-              <p class="contact-detail-label">Email</p>
-              <p class="contact-detail-value"><a href="mailto:kunj@example.com">kunj@example.com</a></p>
-            </div>
-          </div>
-
-          <div class="contact-detail-item" role="listitem">
-            <div class="contact-detail-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            </div>
-            <div>
-              <p class="contact-detail-label">WhatsApp</p>
-              <p class="contact-detail-value"><a href="https://wa.me/919999999999" target="_blank" rel="noopener">+91 99999 99999</a></p>
-            </div>
-          </div>
-
-          <div class="contact-detail-item" role="listitem">
-            <div class="contact-detail-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            </div>
-            <div>
-              <p class="contact-detail-label">Response Time</p>
-              <p class="contact-detail-value">Within 24 hours</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Social Links -->
-        <h3 style="font-size:var(--fs-sm);font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-text-secondary);margin-bottom:var(--space-4);">
-          Find Me Online
-        </h3>
-        <div class="contact-social-links" aria-label="Social media links">
-          <a href="#" class="social-link" aria-label="Instagram" target="_blank" rel="noopener" title="Instagram">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          </a>
-          <a href="#" class="social-link" aria-label="YouTube" target="_blank" rel="noopener" title="YouTube">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
-          </a>
-          <a href="#" class="social-link" aria-label="Spotify" target="_blank" rel="noopener" title="Spotify">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 11.5a5 5 0 0 1 8 0"/><path d="M8.5 14.5a3 3 0 0 1 7 0"/><circle cx="12" cy="18" r="0.5" fill="currentColor"/></svg>
-          </a>
-          <a href="mailto:kunj@example.com" class="social-link" aria-label="Email" title="Email">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </a>
-          <a href="https://wa.me/919999999999" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener" title="WhatsApp">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- Form Column -->
-      <div class="reveal-right">
-        <form id="contact-form" class="contact-form" novalidate
-              aria-labelledby="contact-heading">
-
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" for="contact-name">
-                Full Name <span aria-hidden="true" style="color:var(--color-error)">*</span>
-              </label>
-              <input
-                type="text"
-                id="contact-name"
-                name="name"
-                class="form-input"
-                placeholder="Arjun Sharma"
-                required
-                autocomplete="name"
-                aria-required="true"
-              />
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="contact-email">
-                Email Address <span aria-hidden="true" style="color:var(--color-error)">*</span>
-              </label>
-              <input
-                type="email"
-                id="contact-email"
-                name="email"
-                class="form-input"
-                placeholder="arjun@example.com"
-                required
-                autocomplete="email"
-                aria-required="true"
-              />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" for="contact-service">Project Type</label>
-              <select id="contact-service" name="projectType" class="form-select">
-                <option value="" disabled selected>Select a service…</option>
-                <option value="Mixing">Mixing</option>
-                <option value="Mastering">Mastering</option>
-                <option value="Mixing + Mastering">Mixing + Mastering</option>
-                <option value="Music Production">Music Production</option>
-                <option value="Podcast Editing">Podcast Editing</option>
-                <option value="Audio Cleanup">Audio Cleanup</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="contact-budget">Budget Range</label>
-              <select id="contact-budget" name="budget" class="form-select">
-                <option value="" disabled selected>Select budget…</option>
-                <option value="Under ₹1,000">Under ₹1,000</option>
-                <option value="₹1,000 – ₹3,000">₹1,000 – ₹3,000</option>
-                <option value="₹3,000 – ₹7,000">₹3,000 – ₹7,000</option>
-                <option value="₹7,000 – ₹15,000">₹7,000 – ₹15,000</option>
-                <option value="₹15,000+">₹15,000+</option>
-                <option value="Let's discuss">Let's discuss</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="contact-message">
-              Message <span aria-hidden="true" style="color:var(--color-error)">*</span>
-            </label>
-            <textarea
-              id="contact-message"
-              name="message"
-              class="form-textarea"
-              placeholder="Tell me about your project — genre, reference tracks, timeline, special requirements…"
-              rows="5"
-              required
-              aria-required="true"
-            ></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-primary" id="contact-submit" style="width:100%;padding:1rem;font-size:var(--fs-base);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true">
-              <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
-            </svg>
-            Send Message
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="container nav-inner">
+        <a href="index.html" class="nav-logo" aria-label="Kunj Rana Home">
+          <span class="logo-mark" aria-hidden="true">KR</span>
+          <span class="logo-text">Kunj<span class="logo-dot">.</span></span>
+        </a>
+        <ul class="nav-links" role="list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="tracks.html" class="nav-link">Tracks</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link active" aria-current="page">Contact</a></li>
+        </ul>
+        <div class="nav-cta">
+          <a href="contact.html" class="btn btn-primary">Hire Me</a>
+          <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
           </button>
-
-          <p style="font-size:var(--fs-xs);color:var(--color-text-muted);text-align:center;margin-top:var(--space-3);">
-            I typically respond within 24 hours. For urgent projects, reach out on WhatsApp.
-          </p>
-        </form>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-</main>
-
-<!-- FOOTER -->
-<footer class="footer" role="contentinfo">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="nav-logo"><span class="logo-mark" aria-hidden="true">KR</span><span class="logo-text">Kunj<span class="logo-dot">.</span></span></a>
-        <p>Professional Music Producer & Mixing/Mastering Engineer.</p>
-        <div class="footer-social" aria-label="Social media">
-          <a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-          <a href="#" class="social-link" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
-          <a href="mailto:kunj@example.com" class="social-link" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
         </div>
       </div>
-      <div class="footer-col"><h4>Navigation</h4><nav class="footer-links"><a href="index.html" class="footer-link">Home</a><a href="tracks.html" class="footer-link">Tracks</a><a href="services.html" class="footer-link">Services</a><a href="about.html" class="footer-link">About</a><a href="contact.html" class="footer-link">Contact</a></nav></div>
-      <div class="footer-col"><h4>Services</h4><nav class="footer-links"><a href="services.html" class="footer-link">Mixing</a><a href="services.html" class="footer-link">Mastering</a><a href="services.html" class="footer-link">Production</a><a href="services.html" class="footer-link">Podcast</a><a href="services.html" class="footer-link">Cleanup</a></nav></div>
+    </nav>
+    <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation">
+      <a href="index.html" class="nav-link">Home</a><a href="tracks.html" class="nav-link">Tracks</a>
+      <a href="services.html" class="nav-link">Services</a><a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="contact.html" class="btn btn-primary">Hire Me</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+          <span aria-current="page">Contact</span>
+        </nav>
+        <h1 class="page-hero-title">Let's <span class="highlight">Connect</span></h1>
+        <p class="page-hero-subtitle">
+          Have a project in mind? I'd love to hear about it. Fill out the form below and I'll get back to you within 24
+          hours.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section" style="padding-top:0" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- Info Column -->
+          <div class="reveal-left">
+            <span class="section-tag" style="margin-bottom:var(--space-6);display:inline-flex;">Get In Touch</span>
+            <h2 class="contact-info"
+              style="font-family:var(--font-heading);font-size:var(--fs-2xl);font-weight:800;margin-bottom:var(--space-4);"
+              id="contact-heading">
+              Ready to Make <span class="highlight">Great Music?</span>
+            </h2>
+            <p
+              style="color:var(--color-text-secondary);line-height:1.8;margin-bottom:var(--space-8);font-size:var(--fs-base);">
+              Whether you need a mix, master, full production, or just want to talk about your project ideas — I'm here
+              and always excited to collaborate with passionate artists.
+            </p>
+
+            <!-- Contact Details -->
+            <div class="contact-details" role="list">
+              <div class="contact-detail-item" role="listitem">
+                <div class="contact-detail-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="contact-detail-label">Email</p>
+                  <p class="contact-detail-value"><a href="mailto:kunjr1105@gmail.com">kunjr1105@gmail.com</a></p>
+                </div>
+              </div>
+
+              <div class="contact-detail-item" role="listitem">
+                <div class="contact-detail-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="contact-detail-label">WhatsApp</p>
+                  <p class="contact-detail-value"><a href="https://wa.me/919426782646" target="_blank"
+                      rel="noopener">+91 94267 82646</a></p>
+                </div>
+              </div>
+
+              <div class="contact-detail-item" role="listitem">
+                <div class="contact-detail-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="contact-detail-label">Response Time</p>
+                  <p class="contact-detail-value">Within 24 hours</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <h3
+              style="font-size:var(--fs-sm);font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-text-secondary);margin-bottom:var(--space-4);">
+              Find Me Online
+            </h3>
+            <div class="contact-social-links" aria-label="Social media links">
+              <a href="#" class="social-link" aria-label="Instagram" target="_blank" rel="noopener" title="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
+              </a>
+              <a href="#" class="social-link" aria-label="YouTube" target="_blank" rel="noopener" title="YouTube">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path
+                    d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+                  <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" />
+                </svg>
+              </a>
+              <a href="#" class="social-link" aria-label="Spotify" target="_blank" rel="noopener" title="Spotify">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M8 11.5a5 5 0 0 1 8 0" />
+                  <path d="M8.5 14.5a3 3 0 0 1 7 0" />
+                  <circle cx="12" cy="18" r="0.5" fill="currentColor" />
+                </svg>
+              </a>
+              <a href="mailto:kunj@example.com" class="social-link" aria-label="Email" title="Email">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </a>
+              <a href="https://wa.me/919999999999" class="social-link" aria-label="WhatsApp" target="_blank"
+                rel="noopener" title="WhatsApp">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path
+                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Form Column -->
+          <div class="reveal-right">
+            <form id="contact-form" class="contact-form" novalidate aria-labelledby="contact-heading">
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="contact-name">
+                    Full Name <span aria-hidden="true" style="color:var(--color-error)">*</span>
+                  </label>
+                  <input type="text" id="contact-name" name="name" class="form-input" placeholder="Arjun Sharma"
+                    required autocomplete="name" aria-required="true" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="contact-email">
+                    Email Address <span aria-hidden="true" style="color:var(--color-error)">*</span>
+                  </label>
+                  <input type="email" id="contact-email" name="email" class="form-input" placeholder="arjun@example.com"
+                    required autocomplete="email" aria-required="true" />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="contact-service">Project Type</label>
+                  <select id="contact-service" name="projectType" class="form-select">
+                    <option value="" disabled selected>Select a service…</option>
+                    <option value="Mixing">Mixing</option>
+                    <option value="Mastering">Mastering</option>
+                    <option value="Mixing + Mastering">Mixing + Mastering</option>
+                    <option value="Music Production">Music Production</option>
+                    <option value="Podcast Editing">Podcast Editing</option>
+                    <option value="Audio Cleanup">Audio Cleanup</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="contact-budget">Budget Range</label>
+                  <select id="contact-budget" name="budget" class="form-select">
+                    <option value="" disabled selected>Select budget…</option>
+                    <option value="Under ₹1,000">Under ₹1,000</option>
+                    <option value="₹1,000 – ₹3,000">₹1,000 – ₹3,000</option>
+                    <option value="₹3,000 – ₹7,000">₹3,000 – ₹7,000</option>
+                    <option value="₹7,000 – ₹15,000">₹7,000 – ₹15,000</option>
+                    <option value="₹15,000+">₹15,000+</option>
+                    <option value="Let's discuss">Let's discuss</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-message">
+                  Message <span aria-hidden="true" style="color:var(--color-error)">*</span>
+                </label>
+                <textarea id="contact-message" name="message" class="form-textarea"
+                  placeholder="Tell me about your project — genre, reference tracks, timeline, special requirements…"
+                  rows="5" required aria-required="true"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" id="contact-submit"
+                style="width:100%;padding:1rem;font-size:var(--fs-base);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" width="18" height="18" aria-hidden="true">
+                  <line x1="22" y1="2" x2="11" y2="13" />
+                  <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                </svg>
+                Send Message
+              </button>
+
+              <p
+                style="font-size:var(--fs-xs);color:var(--color-text-muted);text-align:center;margin-top:var(--space-3);">
+                I typically respond within 24 hours. For urgent projects, reach out on WhatsApp.
+              </p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo"><span class="logo-mark" aria-hidden="true">KR</span><span
+              class="logo-text">Kunj<span class="logo-dot">.</span></span></a>
+          <p>Professional Music Producer & Mixing/Mastering Engineer.</p>
+          <div class="footer-social" aria-label="Social media">
+            <a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg></a>
+            <a href="#" class="social-link" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+                <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" />
+              </svg></a>
+            <a href="mailto:kunj@example.com" class="social-link" aria-label="Email"><svg viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <nav class="footer-links"><a href="index.html" class="footer-link">Home</a><a href="tracks.html"
+              class="footer-link">Tracks</a><a href="services.html" class="footer-link">Services</a><a href="about.html"
+              class="footer-link">About</a><a href="contact.html" class="footer-link">Contact</a></nav>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <nav class="footer-links"><a href="services.html" class="footer-link">Mixing</a><a href="services.html"
+              class="footer-link">Mastering</a><a href="services.html" class="footer-link">Production</a><a
+              href="services.html" class="footer-link">Podcast</a><a href="services.html"
+              class="footer-link">Cleanup</a></nav>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; <span id="footer-year">2025</span> <span>Kunj Rana</span>. All rights
+          reserved.</p>
+      </div>
     </div>
-    <div class="footer-bottom"><p class="footer-copyright">&copy; <span id="footer-year">2025</span> <span>Kunj Rana</span>. All rights reserved.</p></div>
+  </footer>
+
+  <!-- AUDIO PLAYER -->
+  <div id="audio-player" role="region" aria-label="Audio Player" class="hidden">
+    <div class="player-progress-track" aria-label="Track progress">
+      <div class="player-progress-fill"></div>
+    </div>
+    <div class="player-track-info"><img class="player-cover" src="images/default-cover.png" alt="Now playing"
+        loading="lazy" />
+      <div class="player-meta">
+        <p class="player-title">Select a track</p>
+        <p class="player-artist">—</p>
+      </div>
+      <div class="player-eq" aria-hidden="true">
+        <div class="player-eq-bar" style="height:40%"></div>
+        <div class="player-eq-bar" style="height:70%"></div>
+        <div class="player-eq-bar" style="height:100%"></div>
+        <div class="player-eq-bar" style="height:60%"></div>
+      </div>
+    </div>
+    <div class="player-controls">
+      <div class="player-buttons"><button class="ctrl-btn" id="btn-shuffle" aria-label="Shuffle"
+          aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="16 3 21 3 21 8" />
+            <line x1="4" y1="20" x2="21" y2="3" />
+            <polyline points="21 16 21 21 16 21" />
+            <line x1="15" y1="15" x2="21" y2="21" />
+            <line x1="4" y1="4" x2="9" y2="9" />
+          </svg></button><button class="ctrl-btn" id="btn-prev" aria-label="Previous"><svg viewBox="0 0 24 24"
+            fill="currentColor" aria-hidden="true">
+            <polygon points="19 20 9 12 19 4 19 20" />
+            <line x1="5" y1="19" x2="5" y2="5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+          </svg></button><button class="ctrl-btn ctrl-btn-play" id="btn-play" aria-label="Play"><svg viewBox="0 0 24 24"
+            fill="currentColor" aria-hidden="true">
+            <polygon points="5 3 19 12 5 21 5 3" />
+          </svg></button><button class="ctrl-btn" id="btn-next" aria-label="Next"><svg viewBox="0 0 24 24"
+            fill="currentColor" aria-hidden="true">
+            <polygon points="5 4 15 12 5 20 5 4" />
+            <line x1="19" y1="5" x2="19" y2="19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+          </svg></button><button class="ctrl-btn" id="btn-repeat" aria-label="Repeat: off"><svg viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true">
+            <polyline points="17 1 21 5 17 9" />
+            <path d="M3 11V9a4 4 0 0 1 4-4h14" />
+            <polyline points="7 23 3 19 7 15" />
+            <path d="M21 13v2a4 4 0 0 1-4 4H3" />
+          </svg><span class="repeat-one-badge"
+            style="display:none;font-size:9px;font-weight:900;position:absolute;">1</span></button></div>
+      <div class="player-timeline"><span class="player-time start">0:00</span><input type="range" class="player-seek"
+          min="0" max="100" value="0" aria-label="Seek" /><span class="player-time end">0:00</span></div>
+    </div>
+    <div class="player-extras">
+      <div class="player-volume-wrap"><button class="ctrl-btn" id="btn-volume" aria-label="Mute"><svg
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+          </svg></button><input type="range" class="player-volume" min="0" max="1" step="0.01" value="1"
+          aria-label="Volume" /></div><button class="player-speed" aria-label="Speed">1×</button>
+    </div>
   </div>
-</footer>
 
-<!-- AUDIO PLAYER -->
-<div id="audio-player" role="region" aria-label="Audio Player" class="hidden">
-  <div class="player-progress-track" aria-label="Track progress"><div class="player-progress-fill"></div></div>
-  <div class="player-track-info"><img class="player-cover" src="images/default-cover.png" alt="Now playing" loading="lazy" /><div class="player-meta"><p class="player-title">Select a track</p><p class="player-artist">—</p></div><div class="player-eq" aria-hidden="true"><div class="player-eq-bar" style="height:40%"></div><div class="player-eq-bar" style="height:70%"></div><div class="player-eq-bar" style="height:100%"></div><div class="player-eq-bar" style="height:60%"></div></div></div>
-  <div class="player-controls"><div class="player-buttons"><button class="ctrl-btn" id="btn-shuffle" aria-label="Shuffle" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg></button><button class="ctrl-btn" id="btn-prev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" y1="19" x2="5" y2="5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></button><button class="ctrl-btn ctrl-btn-play" id="btn-play" aria-label="Play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg></button><button class="ctrl-btn" id="btn-next" aria-label="Next"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></button><button class="ctrl-btn" id="btn-repeat" aria-label="Repeat: off"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg><span class="repeat-one-badge" style="display:none;font-size:9px;font-weight:900;position:absolute;">1</span></button></div><div class="player-timeline"><span class="player-time start">0:00</span><input type="range" class="player-seek" min="0" max="100" value="0" aria-label="Seek" /><span class="player-time end">0:00</span></div></div>
-  <div class="player-extras"><div class="player-volume-wrap"><button class="ctrl-btn" id="btn-volume" aria-label="Mute"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button><input type="range" class="player-volume" min="0" max="1" step="0.01" value="1" aria-label="Volume" /></div><button class="player-speed" aria-label="Speed">1×</button></div>
-</div>
+  <button class="back-to-top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15" />
+    </svg></button>
 
-<button class="back-to-top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg></button>
-
-<script>
-  document.getElementById('footer-year').textContent = new Date().getFullYear();
-  // Pre-fill service from URL param
-  const params = new URLSearchParams(window.location.search);
-  const service = params.get('service');
-  if (service) {
-    const select = document.getElementById('contact-service');
-    if (select) {
-      const opt = Array.from(select.options).find(o => o.value === service);
-      if (opt) opt.selected = true;
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+    // Pre-fill service from URL param
+    const params = new URLSearchParams(window.location.search);
+    const service = params.get('service');
+    if (service) {
+      const select = document.getElementById('contact-service');
+      if (select) {
+        const opt = Array.from(select.options).find(o => o.value === service);
+        if (opt) opt.selected = true;
+      }
     }
-  }
-</script>
-<script type="module" src="js/app.js"></script>
+  </script>
+  <script type="module" src="js/app.js"></script>
 </body>
+
 </html>
