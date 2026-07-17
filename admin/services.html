@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Services | Kunj Admin</title>
+  <meta name="supabase-url"  content="https://csszhetrncjrhujdwqkz.supabase.co" />
+  <meta name="supabase-anon" content="sb_publishable_Im0l0sQfP_bmi1QmF-430w_urObXq2R" />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+<div class="admin-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" aria-label="Admin navigation">
+    <div class="sidebar-logo"><div class="sidebar-logo-mark" aria-hidden="true">KR</div><div><span>Kunj Rana</span><span class="sidebar-logo-sub">Admin</span></div></div>
+    <nav class="sidebar-nav">
+      <span class="nav-group-label">Overview</span>
+      <a href="dashboard.html" class="sidebar-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dashboard</a>
+      <span class="nav-group-label">Content</span>
+      <a href="tracks.html" class="sidebar-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>Tracks</a>
+      <a href="services.html" class="sidebar-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>Services</a>
+      <a href="testimonials.html" class="sidebar-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Testimonials</a>
+      <a href="before-after.html" class="sidebar-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Before &amp; After</a>
+      <span class="nav-group-label">Inbox</span>
+      <a href="contacts.html" class="sidebar-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Contact Inbox</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="main-content">
+    <header class="top-header">
+      <div style="display:flex;align-items:center;gap:12px">
+        <button class="menu-toggle" aria-label="Toggle menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+        <div><p class="header-title">Services</p></div>
+      </div>
+    </header>
+
+    <div class="page-body">
+      <div class="page-header">
+        <div><h1 class="page-title">Services</h1><p class="page-subtitle">Manage what you offer to clients.</p></div>
+        <button class="btn btn-primary" id="open-add-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Add Service
+        </button>
+      </div>
+
+      <div class="table-wrap">
+        <table aria-label="Services List">
+          <thead>
+            <tr>
+              <th>Icon</th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Features</th>
+              <th>Order</th>
+              <th style="width:100px">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="services-tbody">
+            <!-- Rendered via JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal-overlay" id="service-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <h2 class="modal-title" id="modal-title">Add Service</h2>
+      <button class="modal-close" data-close-modal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <form id="service-form">
+        <div class="form-grid">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="f-name">Name *</label>
+              <input type="text" id="f-name" class="form-input" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="f-icon">Icon Name</label>
+              <input type="text" id="f-icon" class="form-input" placeholder="e.g. mixing, mastering" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="f-desc">Description</label>
+            <textarea id="f-desc" class="form-textarea" required></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="f-features">Features (comma separated)</label>
+            <input type="text" id="f-features" class="form-input" placeholder="HQ Audio, 2 Revisions, Stems" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="f-order">Sort Order</label>
+            <input type="number" id="f-order" class="form-input" value="0" />
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" data-close-modal>Cancel</button>
+      <button class="btn btn-primary" id="save-btn">Save Service</button>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+  import { requireAuth } from './js/admin-auth.js';
+  import { getAllServices, createService, updateService, deleteService } from './js/admin-api.js';
+  import { toast, confirm, openModal, closeModal, setActiveSidebarLink, initMobileSidebar } from './js/admin-ui.js';
+
+  await requireAuth();
+  setActiveSidebarLink();
+  initMobileSidebar();
+
+  let allServices = [];
+  let editingId = null;
+  const tbody = document.getElementById('services-tbody');
+  const modal = document.getElementById('service-modal');
+
+  async function loadData() {
+    try {
+      allServices = await getAllServices();
+      render();
+    } catch (e) {
+      toast(e.message, 'error');
+    }
+  }
+
+  function render() {
+    tbody.innerHTML = allServices.map(s => `
+      <tr>
+        <td><span style="display:inline-block;padding:4px 8px;background:var(--accent-dim);color:var(--accent);border-radius:4px;font-size:12px">${s.icon || '—'}</span></td>
+        <td class="fw-600">${s.name}</td>
+        <td class="text-2"><div style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${s.description}</div></td>
+        <td class="text-2">${(s.features || []).length} features</td>
+        <td>${s.sortOrder || 0}</td>
+        <td>
+          <div class="td-actions">
+            <button class="icon-btn" onclick="editItem('${s.id}')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+            <button class="icon-btn danger" onclick="removeItem('${s.id}', '${s.name.replace(/'/g, "\\'")}')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4h6v2"/></svg></button>
+          </div>
+        </td>
+      </tr>
+    `).join('') || `<tr><td colspan="6" class="table-empty">No services found.</td></tr>`;
+  }
+
+  document.getElementById('open-add-btn').addEventListener('click', () => {
+    editingId = null;
+    document.getElementById('modal-title').textContent = 'Add Service';
+    document.getElementById('service-form').reset();
+    openModal(modal);
+  });
+
+  window.editItem = (id) => {
+    const s = allServices.find(x => x.id === id);
+    if (!s) return;
+    editingId = id;
+    document.getElementById('modal-title').textContent = 'Edit Service';
+    document.getElementById('f-name').value = s.name;
+    document.getElementById('f-icon').value = s.icon || '';
+    document.getElementById('f-desc').value = s.description || '';
+    document.getElementById('f-features').value = (s.features || []).join(', ');
+    document.getElementById('f-order').value = s.sortOrder || 0;
+    openModal(modal);
+  };
+
+  window.removeItem = async (id, name) => {
+    if (await confirm(`Delete ${name}?`)) {
+      await deleteService(id);
+      toast('Deleted', 'success');
+      loadData();
+    }
+  };
+
+  document.getElementById('save-btn').addEventListener('click', async () => {
+    const name = document.getElementById('f-name').value.trim();
+    if (!name) return toast('Name required', 'error');
+
+    const data = {
+      name,
+      icon: document.getElementById('f-icon').value.trim(),
+      description: document.getElementById('f-desc').value.trim(),
+      features: document.getElementById('f-features').value.split(',').map(s => s.trim()).filter(Boolean),
+      sort_order: parseInt(document.getElementById('f-order').value) || 0
+    };
+
+    try {
+      if (editingId) await updateService(editingId, data);
+      else await createService(data);
+      toast('Saved successfully', 'success');
+      closeModal(modal);
+      loadData();
+    } catch (e) {
+      toast(e.message, 'error');
+    }
+  });
+
+  loadData();
+</script>
+</body>
+</html>

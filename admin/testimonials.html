@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Testimonials | Kunj Admin</title>
+  <meta name="supabase-url"  content="https://csszhetrncjrhujdwqkz.supabase.co" />
+  <meta name="supabase-anon" content="sb_publishable_Im0l0sQfP_bmi1QmF-430w_urObXq2R" />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+<div class="admin-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" aria-label="Admin navigation">
+    <div class="sidebar-logo"><div class="sidebar-logo-mark" aria-hidden="true">KR</div><div><span>Kunj Rana</span><span class="sidebar-logo-sub">Admin</span></div></div>
+    <nav class="sidebar-nav">
+      <span class="nav-group-label">Overview</span>
+      <a href="dashboard.html" class="sidebar-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dashboard</a>
+      <span class="nav-group-label">Content</span>
+      <a href="tracks.html" class="sidebar-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>Tracks</a>
+      <a href="services.html" class="sidebar-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>Services</a>
+      <a href="testimonials.html" class="sidebar-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Testimonials</a>
+      <a href="before-after.html" class="sidebar-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Before &amp; After</a>
+      <span class="nav-group-label">Inbox</span>
+      <a href="contacts.html" class="sidebar-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Contact Inbox</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="main-content">
+    <header class="top-header">
+      <div style="display:flex;align-items:center;gap:12px">
+        <button class="menu-toggle" aria-label="Toggle menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+        <div><p class="header-title">Testimonials</p></div>
+      </div>
+    </header>
+
+    <div class="page-body">
+      <div class="page-header">
+        <div><h1 class="page-title">Testimonials</h1><p class="page-subtitle">Manage client reviews.</p></div>
+        <button class="btn btn-primary" id="open-add-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Add Review
+        </button>
+      </div>
+
+      <div class="table-wrap">
+        <table aria-label="Testimonials List">
+          <thead>
+            <tr>
+              <th style="width:50px"></th>
+              <th>Name</th>
+              <th>Role</th>
+              <th>Rating</th>
+              <th style="width:100px">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="test-tbody">
+            <!-- Rendered via JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal-overlay" id="test-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <h2 class="modal-title" id="modal-title">Add Testimonial</h2>
+      <button class="modal-close" data-close-modal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <form id="test-form">
+        <div class="form-grid">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="f-name">Name *</label>
+              <input type="text" id="f-name" name="name" class="form-input" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="f-role">Role</label>
+              <input type="text" id="f-role" name="role" class="form-input" placeholder="e.g. Artist" />
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Avatar (JPG/PNG, max 2MB)</label>
+            <div class="upload-zone" id="avatar-zone">
+              <input type="file" id="f-avatar" name="avatar" accept="image/*" />
+              <div class="upload-zone-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+              <p class="upload-zone-text">Drop avatar image</p>
+            </div>
+            <div class="upload-preview" id="avatar-preview" style="display:none">
+              <span class="upload-preview-name"></span>
+              <button type="button" class="upload-preview-remove"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="f-quote">Quote</label>
+            <textarea id="f-quote" name="quote" class="form-textarea" required></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="f-rating">Rating (1-5)</label>
+            <input type="number" id="f-rating" name="rating" class="form-input" value="5" min="1" max="5" />
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" data-close-modal>Cancel</button>
+      <button class="btn btn-primary" id="save-btn">Save</button>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+  import { requireAuth } from './js/admin-auth.js';
+  import { getAllTestimonials, createTestimonial, updateTestimonial, deleteTestimonial } from './js/admin-api.js';
+  import { toast, confirm, openModal, closeModal, setActiveSidebarLink, initMobileSidebar, initUploadZone, starsHtml } from './js/admin-ui.js';
+
+  await requireAuth();
+  setActiveSidebarLink();
+  initMobileSidebar();
+  initUploadZone(document.getElementById('avatar-zone'), document.getElementById('avatar-preview'));
+
+  let allData = [];
+  let editingId = null;
+  const tbody = document.getElementById('test-tbody');
+  const modal = document.getElementById('test-modal');
+
+  async function loadData() {
+    try {
+      allData = await getAllTestimonials();
+      render();
+    } catch (e) {
+      toast(e.message, 'error');
+    }
+  }
+
+  function render() {
+    tbody.innerHTML = allData.map(t => `
+      <tr>
+        <td>
+          ${t.avatar
+            ? `<img src="${t.avatar}" class="track-thumb" style="border-radius:50%" />`
+            : `<div class="track-thumb-placeholder" style="border-radius:50%">A</div>`
+          }
+        </td>
+        <td class="fw-600">${t.name}</td>
+        <td class="text-2">${t.role || '—'}</td>
+        <td>${starsHtml(t.rating)}</td>
+        <td>
+          <div class="td-actions">
+            <button class="icon-btn" onclick="editItem('${t.id}')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+            <button class="icon-btn danger" onclick="removeItem('${t.id}', '${t.name.replace(/'/g, "\\'")}')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4h6v2"/></svg></button>
+          </div>
+        </td>
+      </tr>
+    `).join('') || `<tr><td colspan="5" class="table-empty">No testimonials found.</td></tr>`;
+  }
+
+  document.getElementById('open-add-btn').addEventListener('click', () => {
+    editingId = null;
+    document.getElementById('modal-title').textContent = 'Add Testimonial';
+    document.getElementById('test-form').reset();
+    document.getElementById('avatar-preview').style.display = 'none';
+    openModal(modal);
+  });
+
+  window.editItem = (id) => {
+    const t = allData.find(x => x.id === id);
+    if (!t) return;
+    editingId = id;
+    document.getElementById('modal-title').textContent = 'Edit Testimonial';
+    document.getElementById('f-name').value = t.name;
+    document.getElementById('f-role').value = t.role || '';
+    document.getElementById('f-quote').value = t.quote || '';
+    document.getElementById('f-rating').value = t.rating || 5;
+    document.getElementById('avatar-preview').style.display = 'none';
+    openModal(modal);
+  };
+
+  window.removeItem = async (id, name) => {
+    if (await confirm(`Delete review by ${name}?`)) {
+      await deleteTestimonial(id);
+      toast('Deleted', 'success');
+      loadData();
+    }
+  };
+
+  document.getElementById('save-btn').addEventListener('click', async () => {
+    if (!document.getElementById('f-name').value.trim()) return toast('Name required', 'error');
+    
+    const form = new FormData(document.getElementById('test-form'));
+    const btn = document.getElementById('save-btn');
+    btn.disabled = true;
+    
+    try {
+      if (editingId) await updateTestimonial(editingId, form);
+      else await createTestimonial(form);
+      toast('Saved successfully', 'success');
+      closeModal(modal);
+      loadData();
+    } catch (e) {
+      toast(e.message, 'error');
+    } finally {
+      btn.disabled = false;
+    }
+  });
+
+  loadData();
+</script>
+</body>
+</html>

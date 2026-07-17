@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Dashboard | Kunj Admin</title>
+  <meta name="supabase-url"  content="https://csszhetrncjrhujdwqkz.supabase.co" />
+  <meta name="supabase-anon" content="sb_publishable_Im0l0sQfP_bmi1QmF-430w_urObXq2R" />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+<div class="admin-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" aria-label="Admin navigation">
+    <div class="sidebar-logo">
+      <div class="sidebar-logo-mark" aria-hidden="true">KR</div>
+      <div>
+        <span>Kunj Rana</span>
+        <span class="sidebar-logo-sub">Admin</span>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <span class="nav-group-label">Overview</span>
+      <a href="dashboard.html" class="sidebar-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        Dashboard
+      </a>
+      <span class="nav-group-label">Content</span>
+      <a href="tracks.html" class="sidebar-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+        Tracks
+      </a>
+      <a href="services.html" class="sidebar-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+        Services
+      </a>
+      <a href="testimonials.html" class="sidebar-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Testimonials
+      </a>
+      <a href="before-after.html" class="sidebar-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        Before &amp; After
+      </a>
+      <span class="nav-group-label">Inbox</span>
+      <a href="contacts.html" class="sidebar-link" id="contacts-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Contact Inbox
+        <span class="sidebar-badge" id="unread-badge" style="display:none">0</span>
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-user-avatar" id="user-avatar" aria-hidden="true">A</div>
+        <div>
+          <p class="sidebar-user-name" id="user-name">Admin</p>
+          <p class="sidebar-user-role">Administrator</p>
+        </div>
+        <button class="sidebar-logout-btn" id="logout-btn" aria-label="Sign out" title="Sign out">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="main-content">
+    <header class="top-header">
+      <div>
+        <button class="menu-toggle" aria-label="Toggle menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <p class="header-title">Dashboard</p>
+      </div>
+      <div class="header-actions">
+        <a href="/" target="_blank" class="header-view-site">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          View Site
+        </a>
+      </div>
+    </header>
+
+    <div class="page-body">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Overview</h1>
+          <p class="page-subtitle">Here's what's happening with your portfolio.</p>
+        </div>
+        <a href="tracks.html" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Upload Track
+        </a>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-grid" id="stats-grid" aria-label="Statistics">
+        <div class="stat-card"><div class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div><div><div class="stat-value skeleton" id="s-tracks" style="width:60px;height:28px;border-radius:6px">&nbsp;</div><div class="stat-label">Total Tracks</div></div></div>
+        <div class="stat-card"><div class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg></div><div><div class="stat-value skeleton" id="s-plays" style="width:60px;height:28px;border-radius:6px">&nbsp;</div><div class="stat-label">Total Plays</div></div></div>
+        <div class="stat-card"><div class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div><div class="stat-value skeleton" id="s-artists" style="width:60px;height:28px;border-radius:6px">&nbsp;</div><div class="stat-label">Artists Served</div></div></div>
+        <div class="stat-card"><div class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="stat-value skeleton" id="s-msgs" style="width:60px;height:28px;border-radius:6px">&nbsp;</div><div class="stat-label">Unread Messages</div></div></div>
+      </div>
+
+      <!-- Recent Content -->
+      <div class="recent-grid">
+        <!-- Recent Tracks -->
+        <div class="recent-card">
+          <div class="recent-card-header">
+            <h2 class="recent-card-title">Recent Tracks</h2>
+            <a href="tracks.html" class="recent-card-link">View all →</a>
+          </div>
+          <div id="recent-tracks">
+            <div class="recent-item"><div class="skeleton" style="width:36px;height:36px;border-radius:6px;flex-shrink:0"></div><div style="flex:1"><div class="skeleton" style="height:13px;width:70%;margin-bottom:5px"></div><div class="skeleton" style="height:11px;width:45%"></div></div></div>
+            <div class="recent-item"><div class="skeleton" style="width:36px;height:36px;border-radius:6px;flex-shrink:0"></div><div style="flex:1"><div class="skeleton" style="height:13px;width:60%;margin-bottom:5px"></div><div class="skeleton" style="height:11px;width:40%"></div></div></div>
+            <div class="recent-item"><div class="skeleton" style="width:36px;height:36px;border-radius:6px;flex-shrink:0"></div><div style="flex:1"><div class="skeleton" style="height:13px;width:75%;margin-bottom:5px"></div><div class="skeleton" style="height:11px;width:50%"></div></div></div>
+          </div>
+        </div>
+
+        <!-- Recent Contacts -->
+        <div class="recent-card">
+          <div class="recent-card-header">
+            <h2 class="recent-card-title">Recent Enquiries</h2>
+            <a href="contacts.html" class="recent-card-link">View all →</a>
+          </div>
+          <div id="recent-contacts">
+            <div class="recent-item"><div style="flex:1"><div class="skeleton" style="height:13px;width:60%;margin-bottom:5px"></div><div class="skeleton" style="height:11px;width:80%"></div></div><div class="skeleton" style="height:11px;width:50px"></div></div>
+            <div class="recent-item"><div style="flex:1"><div class="skeleton" style="height:13px;width:55%;margin-bottom:5px"></div><div class="skeleton" style="height:11px;width:70%"></div></div><div class="skeleton" style="height:11px;width:50px"></div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script type="module">
+  import { requireAuth, signOut, getSession } from './js/admin-auth.js';
+  import { getStats, getAllTracks, getAllContacts } from './js/admin-api.js';
+  import { setActiveSidebarLink, initMobileSidebar, timeAgo } from './js/admin-ui.js';
+
+  await requireAuth();
+  setActiveSidebarLink();
+  initMobileSidebar();
+
+  // Show user info
+  const session = await getSession();
+  const email = session?.user?.email || '';
+  document.getElementById('user-name').textContent   = email.split('@')[0];
+  document.getElementById('user-avatar').textContent = email[0]?.toUpperCase() || 'A';
+  document.getElementById('logout-btn').addEventListener('click', signOut);
+
+  // Load stats
+  try {
+    const stats = await getStats();
+    setVal('s-tracks',  stats.totalTracks);
+    setVal('s-plays',   stats.totalPlays);
+    setVal('s-artists', stats.uniqueArtists);
+    setVal('s-msgs',    stats.unreadContacts);
+
+    if (stats.unreadContacts > 0) {
+      const badge = document.getElementById('unread-badge');
+      badge.textContent = stats.unreadContacts;
+      badge.style.display = 'inline-flex';
+    }
+  } catch (e) {
+    console.warn('Stats error:', e);
+  }
+
+  // Recent tracks
+  try {
+    const tracks = await getAllTracks();
+    const el = document.getElementById('recent-tracks');
+    el.innerHTML = tracks.slice(0, 5).map((t) => `
+      <div class="recent-item">
+        ${t.cover_url
+          ? `<img src="${t.cover_url}" alt="${t.title}" class="recent-item-img" loading="lazy" />`
+          : `<div class="recent-item-img" style="display:flex;align-items:center;justify-content:center;color:var(--text-3)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/></svg></div>`
+        }
+        <div>
+          <p class="recent-item-name">${t.title}</p>
+          <p class="recent-item-meta">${t.genre || '—'} &bull; ${t.artist}</p>
+        </div>
+        <span class="recent-item-time">${timeAgo(t.created_at)}</span>
+      </div>
+    `).join('') || '<p style="padding:16px 20px;color:var(--text-3);font-size:.875rem">No tracks yet.</p>';
+  } catch (e) { console.warn('Tracks load error:', e); }
+
+  // Recent contacts
+  try {
+    const contacts = await getAllContacts();
+    const el = document.getElementById('recent-contacts');
+    el.innerHTML = contacts.slice(0, 5).map((c) => `
+      <div class="recent-item">
+        <div>
+          <p class="recent-item-name" style="${!c.is_read ? 'font-weight:700' : ''}">${c.name} <span style="font-size:0.75rem;color:var(--text-3)">— ${c.project_type || 'General'}</span></p>
+          <p class="recent-item-meta">${c.email}</p>
+        </div>
+        <span class="recent-item-time">${timeAgo(c.created_at)}</span>
+      </div>
+    `).join('') || '<p style="padding:16px 20px;color:var(--text-3);font-size:.875rem">No messages yet.</p>';
+  } catch (e) { console.warn('Contacts load error:', e); }
+
+  function setVal(id, val) {
+    const el = document.getElementById(id);
+    if (el) { el.className = 'stat-value'; el.textContent = val ?? 0; }
+  }
+</script>
+</body>
+</html>
