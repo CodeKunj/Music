@@ -43,6 +43,19 @@ export function timeAgo(dateString) {
 document.addEventListener('DOMContentLoaded', () => {
   setActiveSidebarLink();
   initMobileSidebar();
+
+  // Global modal close listener
+  document.addEventListener('click', (e) => {
+    // Close on button click
+    if (e.target.closest('[data-close-modal]')) {
+      const modal = e.target.closest('.modal-overlay');
+      if (modal) closeModal(modal);
+    }
+    // Close on overlay click
+    if (e.target.classList.contains('modal-overlay')) {
+      closeModal(e.target);
+    }
+  });
 });
 
 export function toast(msg, type = 'info') {
