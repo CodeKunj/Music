@@ -25,8 +25,8 @@ let searchQuery = '';
 
 // ── DOM Elements ───────────────────────────────────────────
 
-const grid    = document.getElementById('tracks-grid');
-const search  = document.getElementById('tracks-search');
+const grid = document.getElementById('tracks-grid');
+const search = document.getElementById('tracks-search');
 const filters = document.querySelectorAll('.filter-pill');
 const counter = document.getElementById('tracks-count');
 
@@ -77,7 +77,7 @@ function renderTracks(tracks) {
 
 function buildTrackCard(track, num) {
   const cover = track.cover || 'images/default-cover.png';
-  const title  = truncate(track.title, 28);
+  const title = truncate(track.title, 28);
   const artist = truncate(track.artist, 26);
 
   return `
@@ -253,8 +253,8 @@ function updateCounter(count) {
       count === 0
         ? 'No tracks'
         : count === 1
-        ? '1 track'
-        : `${count} tracks`;
+          ? '1 track'
+          : `${count} tracks`;
   }
 }
 
@@ -268,10 +268,10 @@ export function renderFeaturedCard(track) {
   const card = document.getElementById('featured-track-card');
   if (!card || !track) return;
 
-  card.querySelector('.featured-title').textContent  = track.title;
+  card.querySelector('.featured-title').textContent = track.title;
   card.querySelector('.featured-artist').textContent = `by ${track.artist}`;
-  card.querySelector('.featured-genre').textContent  = track.genre;
-  card.querySelector('.featured-desc').textContent   = track.description || '';
+  card.querySelector('.featured-genre').textContent = track.genre;
+  card.querySelector('.featured-desc').textContent = track.description || '';
   card.querySelector('.featured-duration').textContent = track.duration || '';
 
   const coverImg = card.querySelector('.featured-cover img');
@@ -280,12 +280,12 @@ export function renderFeaturedCard(track) {
     coverImg.alt = `${track.title} cover`;
   }
 
-  const playBtn = card.querySelector('#featured-play-btn');
+  const playBtn = card.querySelector('.featured-play-btn');
   playBtn?.addEventListener('click', () => {
     playTrack(track);
   });
 
-  const addBtn = card.querySelector('#featured-add-queue');
+  const addBtn = card.querySelector('.featured-add-queue');
   addBtn?.addEventListener('click', () => {
     import('./player.js').then(({ addToQueue }) => {
       addToQueue(track);
@@ -371,7 +371,7 @@ function bindBAEvents(container) {
     btn.addEventListener('click', () => {
       const card = btn.closest('.ba-card');
       const type = btn.dataset.type;
-      const src  = type === 'before' ? card.dataset.before : card.dataset.after;
+      const src = type === 'before' ? card.dataset.before : card.dataset.after;
 
       if (currentCard === card && currentType === type && !baAudio.paused) {
         baAudio.pause();
