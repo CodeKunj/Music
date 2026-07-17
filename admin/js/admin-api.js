@@ -20,7 +20,17 @@ async function fetchWithAuth(url, options = {}) {
       signOut();
       throw new Error('Session expired');
     }
-    const data = await res.json();
+    let data;
+    const text = await res.text();
+    try {
+      data = JSON.parse(text);
+    } catch (e) {
+      if (res.status === 413 || text.includes('Request Entity Too Large')) {
+        throw new Error('File is too large! Vercel limits uploads to 4.5MB.');
+      }
+      throw new Error(`API Error (${res.status}): ${text.substring(0, 50)}...`);
+    }
+
     if (!res.ok) throw new Error(data.error || 'API Error');
     return data;
   } catch (err) {
