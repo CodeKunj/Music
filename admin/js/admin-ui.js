@@ -55,14 +55,14 @@ export async function confirm(msg) {
 
 export function openModal(modal) {
   if (modal) {
-    modal.classList.add('show');
+    modal.classList.add('open');
     modal.style.display = 'flex';
   }
 }
 
 export function closeModal(modal) {
   if (modal) {
-    modal.classList.remove('show');
+    modal.classList.remove('open');
     modal.style.display = 'none';
   }
 }
@@ -91,8 +91,6 @@ export function showSkeletonRows(tbody, cols, rows = 3) {
 }
 
 export function createAudioPreview(url) {
-  const div = document.createElement('div');
-  div.innerHTML = `<audio controls src="${url}" style="height:30px;"></audio>`;
-  return div.firstElementChild;
+  return `<audio controls src="${url}" style="height:30px; max-width:150px;"></audio>`;
 }
 
