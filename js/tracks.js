@@ -280,15 +280,17 @@ export function renderFeaturedCard(track) {
     coverImg.alt = `${track.title} cover`;
   }
 
-  const playBtn = card.querySelector('.featured-play-btn');
-  playBtn?.addEventListener('click', () => {
-    playTrack(track);
+  const playBtns = card.querySelectorAll('.featured-play-btn, #featured-play-btn');
+  playBtns.forEach(btn => {
+    btn?.addEventListener('click', () => playTrack(track));
   });
 
-  const addBtn = card.querySelector('.featured-add-queue');
-  addBtn?.addEventListener('click', () => {
-    import('./player.js').then(({ addToQueue }) => {
-      addToQueue(track);
+  const addBtns = card.querySelectorAll('.featured-add-queue, #featured-add-queue');
+  addBtns.forEach(btn => {
+    btn?.addEventListener('click', () => {
+      import('./player.js').then(({ addToQueue }) => {
+        addToQueue(track);
+      });
     });
   });
 }
