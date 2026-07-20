@@ -156,33 +156,45 @@ function initBackToTop() {
 
 // ── Testimonials Carousel ──────────────────────────────────
 
+function buildTestimonialCards(testimonials) {
+  const track = document.querySelector('.testimonials-track');
+  if (!track || !testimonials?.length) return;
+
+  const starSVG = (filled) => `
+    <svg viewBox="0 0 24 24" ${filled ? 'fill="currentColor"' : 'fill="none" stroke="currentColor" stroke-width="2"'} aria-hidden="true">
+      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+    </svg>`;
+
+  track.innerHTML = testimonials.map((t, idx) => {
+    const stars = Array.from({ length: 5 })
+      .map((_, i) => starSVG(i < (t.rating || 5)))
+      .join('');
+    const avatar = t.avatar || 'images/default-cover.png';
+    return `
+      <article class="testimonial-card${idx === 0 ? ' active' : ''}" role="listitem">
+        <div class="testimonial-stars" aria-label="${t.rating || 5} star rating">${stars}</div>
+        <blockquote class="testimonial-quote">"${t.quote}"</blockquote>
+        <div class="testimonial-author">
+          <img src="${avatar}" alt="${t.name}" class="testimonial-avatar" loading="lazy" />
+          <div>
+            <p class="testimonial-name">${t.name}</p>
+            <p class="testimonial-role">${t.role || ''}</p>
+          </div>
+        </div>
+      </article>`;
+  }).join('');
+}
+
 function initTestimonialsCarousel() {
   const track = document.querySelector('.testimonials-track');
   if (!track) return;
 
-  const cards    = track.querySelectorAll('.testimonial-card');
   const dotsWrap = document.querySelector('.carousel-dots');
   const prevBtn  = document.querySelector('#carousel-prev');
   const nextBtn  = document.querySelector('#carousel-next');
 
-  if (!cards.length) return;
-
-  let current  = 0;
+  let current   = 0;
   let autoTimer = null;
-  const visibleCount = getVisibleCount();
-
-  // Build dots
-  if (dotsWrap) {
-    const totalSlides = Math.ceil(cards.length / visibleCount);
-    dotsWrap.innerHTML = Array.from({ length: totalSlides })
-      .map((_, i) => `<button class="carousel-dot${i === 0 ? ' active' : ''}"
-              data-index="${i}" aria-label="Go to slide ${i + 1}"></button>`)
-      .join('');
-
-    dotsWrap.querySelectorAll('.carousel-dot').forEach((dot) => {
-      dot.addEventListener('click', () => goTo(parseInt(dot.dataset.index)));
-    });
-  }
 
   function getVisibleCount() {
     if (window.innerWidth < 768) return 1;
@@ -190,14 +202,39 @@ function initTestimonialsCarousel() {
     return 3;
   }
 
+  function getCardWidth() {
+    const card = track.querySelector('.testimonial-card');
+    if (!card) return 0;
+    // Read actual computed gap from the track element
+    const gap = parseFloat(getComputedStyle(track).gap) || 24;
+    return card.offsetWidth + gap;
+  }
+
+  function buildDots() {
+    if (!dotsWrap) return;
+    const cards = track.querySelectorAll('.testimonial-card');
+    const totalSlides = Math.ceil(cards.length / getVisibleCount());
+    dotsWrap.innerHTML = Array.from({ length: totalSlides })
+      .map((_, i) => `<button class="carousel-dot${i === 0 ? ' active' : ''}"
+              data-index="${i}" aria-label="Go to slide ${i + 1}"></button>`)
+      .join('');
+    dotsWrap.querySelectorAll('.carousel-dot').forEach((dot) => {
+      dot.addEventListener('click', () => goTo(parseInt(dot.dataset.index)));
+    });
+  }
+
   function goTo(idx) {
-    const total = Math.ceil(cards.length / getVisibleCount());
+    const cards = track.querySelectorAll('.testimonial-card');
+    if (!cards.length) return;
+    const vc    = getVisibleCount();
+    const total = Math.ceil(cards.length / vc);
     current = ((idx % total) + total) % total;
-    const cardWidth = cards[0].offsetWidth + 24; // gap
-    track.style.transform = `translateX(-${current * cardWidth * getVisibleCount()}px)`;
+
+    // Move track by (current group index) × (one card width incl. gap) × visibleCount
+    track.style.transform = `translateX(-${current * getCardWidth() * vc}px)`;
 
     cards.forEach((c, i) => {
-      c.classList.toggle('active', i === current * getVisibleCount());
+      c.classList.toggle('active', i === current * vc);
     });
 
     dotsWrap?.querySelectorAll('.carousel-dot').forEach((d, i) => {
@@ -206,9 +243,6 @@ function initTestimonialsCarousel() {
 
     resetAuto();
   }
-
-  prevBtn?.addEventListener('click', () => goTo(current - 1));
-  nextBtn?.addEventListener('click', () => goTo(current + 1));
 
   function startAuto() {
     autoTimer = setInterval(() => goTo(current + 1), 5000);
@@ -219,14 +253,21 @@ function initTestimonialsCarousel() {
     startAuto();
   }
 
-  startAuto();
+  prevBtn?.addEventListener('click', () => goTo(current - 1));
+  nextBtn?.addEventListener('click', () => goTo(current + 1));
 
   // Pause on hover
   track.addEventListener('mouseenter', () => clearInterval(autoTimer));
   track.addEventListener('mouseleave', startAuto);
 
-  // Resize
-  window.addEventListener('resize', () => goTo(0), { passive: true });
+  // Rebuild dots + reset on resize
+  window.addEventListener('resize', () => {
+    buildDots();
+    goTo(0);
+  }, { passive: true });
+
+  buildDots();
+  startAuto();
 }
 
 // ── Contact Form ───────────────────────────────────────────
@@ -299,18 +340,24 @@ async function initPageSpecific() {
 }
 
 async function initHomePage() {
-  // Featured track
   try {
     const { getFeaturedTrack, getBeforeAfterProjects, getTestimonials } = await import('./api.js');
     const { renderFeaturedCard, renderBeforeAfter } = await import('./tracks.js');
 
-    const [featured, baProjects] = await Promise.allSettled([
+    const [featured, baProjects, testimonials] = await Promise.allSettled([
       getFeaturedTrack(),
       getBeforeAfterProjects(),
+      getTestimonials(),
     ]);
 
-    if (featured.status === 'fulfilled') renderFeaturedCard(featured.value);
-    if (baProjects.status === 'fulfilled') renderBeforeAfter(baProjects.value);
+    if (featured.status     === 'fulfilled') renderFeaturedCard(featured.value);
+    if (baProjects.status   === 'fulfilled') renderBeforeAfter(baProjects.value);
+
+    // Inject API testimonials and re-initialise the carousel
+    if (testimonials.status === 'fulfilled' && testimonials.value?.length) {
+      buildTestimonialCards(testimonials.value);
+      initTestimonialsCarousel(); // re-run after cards are in the DOM
+    }
   } catch (err) {
     console.warn('Home page data load error:', err);
   }
