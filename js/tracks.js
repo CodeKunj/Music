@@ -328,7 +328,7 @@ function buildBACard(project) {
       <div class="ba-audio-section">
         <div class="ba-label before">
           <span class="ba-label-dot"></span>
-          Before (Raw Mix)
+          Before (Raw Vocals)
         </div>
         <div class="ba-player-bar before">
           <button class="ba-play-btn" data-type="before" aria-label="Play before mix">
