@@ -4,6 +4,7 @@
    ========================================================= */
 
 import { formatTime, toast } from './ui.js';
+import { recordPlay } from './api.js';
 
 // ── State ──────────────────────────────────────────────────
 
@@ -173,7 +174,9 @@ function playAt(index) {
   updatePlayerUI(track);
   playerEl?.classList.remove('hidden');
 
-  audio.play().catch((err) => {
+  audio.play().then(() => {
+    if (track.id) recordPlay(track.id);
+  }).catch((err) => {
     console.warn('Playback failed:', err);
     toast('Unable to play this track.', 'error');
   });
@@ -367,8 +370,7 @@ function updatePlayerUI(track) {
   updateRepeatBtn();
   updateVolumeIcon();
 
-  // Update document title
-  document.title = `${track.title} — Kunj Rana`;
+  // Remove document title update to keep the static SEO title
 }
 
 // ── Session Persistence ────────────────────────────────────

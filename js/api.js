@@ -81,6 +81,17 @@ export async function getFeaturedTrack() {
   return fetchWithTimeout(`${API_BASE}/tracks/featured`);
 }
 
+/**
+ * Record a play for a specific track.
+ * POST /api/tracks/:id/play
+ * @param {string|number} id
+ */
+export async function recordPlay(id) {
+  return fetchWithTimeout(`${API_BASE}/tracks/${id}/play`, {
+    method: 'POST'
+  }).catch(e => console.warn('Failed to record play', e));
+}
+
 // ── Services Endpoint ──────────────────────────────────────
 
 /**
