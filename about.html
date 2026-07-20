@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- ═══ PRIMARY SEO ═══ -->
   <title>About Kunj Rana | Music Producer &amp; Mixing Mastering Engineer — India</title>
-  <meta name="description" content="Learn about Kunj Rana, a professional Music Producer and Mixing &amp; Mastering Engineer from India with 2+ years of experience. Passionate about delivering world-class sound." />
-  <meta name="keywords" content="Kunj Rana music producer, about mixing engineer India, sound engineer India, music producer biography, audio engineer India" />
+  <meta name="description"
+    content="Learn about Kunj Rana, a professional Music Producer and Mixing &amp; Mastering Engineer from India with 2+ years of experience. Passionate about delivering world-class sound." />
+  <meta name="keywords"
+    content="Kunj Rana music producer, about mixing engineer India, sound engineer India, music producer biography, audio engineer India" />
   <meta name="author" content="Kunj Rana" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://kunjmusic.vercel.app/about.html" />
@@ -16,14 +19,16 @@
   <meta property="og:type" content="profile" />
   <meta property="og:url" content="https://kunjmusic.vercel.app/about.html" />
   <meta property="og:title" content="About Kunj Rana | Music Producer &amp; Engineer" />
-  <meta property="og:description" content="Professional Music Producer and Mixing &amp; Mastering Engineer from India with 2+ years of experience." />
+  <meta property="og:description"
+    content="Professional Music Producer and Mixing &amp; Mastering Engineer from India with 2+ years of experience." />
   <meta property="og:image" content="https://kunjmusic.vercel.app/images/Portfolio.jpeg" />
   <meta property="og:site_name" content="Kunj Rana Music" />
 
   <!-- ═══ TWITTER CARD ═══ -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="About Kunj Rana | Music Producer" />
-  <meta name="twitter:description" content="Professional Music Producer and Mixing &amp; Mastering Engineer from India." />
+  <meta name="twitter:description"
+    content="Professional Music Producer and Mixing &amp; Mastering Engineer from India." />
   <meta name="twitter:image" content="https://kunjmusic.vercel.app/images/Portfolio.jpeg" />
 
   <link rel="stylesheet" href="css/style.css" />
@@ -32,257 +37,448 @@
   <link rel="stylesheet" href="css/responsive.css" />
   <style>
     /* ── About page extra styles ── */
-    .timeline { position:relative; padding-left:var(--space-8); }
+    .timeline {
+      position: relative;
+      padding-left: var(--space-8);
+    }
+
     .timeline::before {
-      content:'';position:absolute;left:0;top:0;bottom:0;
-      width:2px;background:linear-gradient(to bottom,var(--color-accent),transparent);
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--color-accent), transparent);
     }
-    .timeline-item { position:relative; margin-bottom:var(--space-8); }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: var(--space-8);
+    }
+
     .timeline-item::before {
-      content:'';position:absolute;left:calc(-1 * var(--space-8) - 4px);
-      top:6px;width:10px;height:10px;border-radius:50%;
-      background:var(--color-accent);box-shadow:0 0 10px var(--color-accent);
+      content: '';
+      position: absolute;
+      left: calc(-1 * var(--space-8) - 4px);
+      top: 6px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      box-shadow: 0 0 10px var(--color-accent);
     }
+
     .timeline-year {
-      font-size:var(--fs-xs);font-weight:700;letter-spacing:0.1em;
-      text-transform:uppercase;color:var(--color-accent);margin-bottom:4px;
+      font-size: var(--fs-xs);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 4px;
     }
+
     .timeline-title {
-      font-family:var(--font-heading);font-size:var(--fs-lg);font-weight:700;margin-bottom:4px;
+      font-family: var(--font-heading);
+      font-size: var(--fs-lg);
+      font-weight: 700;
+      margin-bottom: 4px;
     }
-    .timeline-desc { font-size:var(--fs-sm);color:var(--color-text-secondary);line-height:1.7; }
+
+    .timeline-desc {
+      font-size: var(--fs-sm);
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
 
     .skills-grid {
-      display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:var(--space-4);
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: var(--space-4);
     }
+
     .skill-item {
-      background:var(--color-card);border:1px solid var(--color-border);
-      border-radius:var(--radius-lg);padding:var(--space-5);
-      transition:all var(--transition-base);
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5);
+      transition: all var(--transition-base);
     }
+
     .skill-item:hover {
-      border-color:rgba(139,94,60,0.3);transform:translateY(-4px);
+      border-color: rgba(139, 94, 60, 0.3);
+      transform: translateY(-4px);
     }
-    .skill-item-name { font-weight:600;font-size:var(--fs-sm);margin-bottom:var(--space-3); }
+
+    .skill-item-name {
+      font-weight: 600;
+      font-size: var(--fs-sm);
+      margin-bottom: var(--space-3);
+    }
+
     .skill-bar-track {
-      height:4px;background:rgba(255,255,255,0.08);border-radius:2px;overflow:hidden;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 2px;
+      overflow: hidden;
     }
+
     .skill-bar-fill {
-      height:100%;background:var(--gradient-accent);border-radius:2px;
-      transform:scaleX(0);transform-origin:left;
-      transition:transform 1s cubic-bezier(0.22,1,0.36,1);
+      height: 100%;
+      background: var(--gradient-accent);
+      border-radius: 2px;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
     }
-    .skill-item.visible .skill-bar-fill { transform:scaleX(1); }
-    .skill-level { font-size:var(--fs-xs);color:var(--color-text-muted);margin-top:var(--space-2); }
+
+    .skill-item.visible .skill-bar-fill {
+      transform: scaleX(1);
+    }
+
+    .skill-level {
+      font-size: var(--fs-xs);
+      color: var(--color-text-muted);
+      margin-top: var(--space-2);
+    }
   </style>
   <link rel="icon" type="image/png" href="images/Portfolio.jpeg" />
 </head>
+
 <body>
 
-<!-- NAVBAR -->
-<header>
-  <nav class="navbar" role="navigation" aria-label="Main navigation">
-    <div class="container nav-inner">
-      <a href="index.html" class="nav-logo" aria-label="Kunj Rana Home">
-        <img src="images/Portfolio.jpeg" class="logo-mark" alt="KR" style="object-fit:cover; border-radius:8px;" />
-        <span class="logo-text">Kunj<span class="logo-dot">.</span></span>
-      </a>
-      <ul class="nav-links" role="list">
-        <li><a href="index.html"    class="nav-link">Home</a></li>
-        <li><a href="tracks.html"  class="nav-link">Tracks</a></li>
-        <li><a href="services.html" class="nav-link">Services</a></li>
-        <li><a href="about.html"   class="nav-link active" aria-current="page">About</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
-      </ul>
-      <div class="nav-cta">
-        <a href="contact.html" class="btn btn-primary">Hire Me</a>
-        <button class="hamburger" aria-label="Open menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="container nav-inner">
+        <a href="index.html" class="nav-logo" aria-label="Kunj Rana Home">
+          <img src="images/Portfolio.jpeg" class="logo-mark" alt="KR" style="object-fit:cover; border-radius:8px;" />
+          <span class="logo-text">Kunj<span class="logo-dot">.</span></span>
+        </a>
+        <ul class="nav-links" role="list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="tracks.html" class="nav-link">Tracks</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="about.html" class="nav-link active" aria-current="page">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-cta">
+          <a href="contact.html" class="btn btn-primary">Hire Me</a>
+          <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
       </div>
-    </div>
-  </nav>
-  <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation">
-    <a href="index.html" class="nav-link">Home</a><a href="tracks.html" class="nav-link">Tracks</a>
-    <a href="services.html" class="nav-link">Services</a><a href="about.html" class="nav-link">About</a>
-    <a href="contact.html" class="nav-link">Contact</a>
-    <a href="contact.html" class="btn btn-primary">Hire Me</a>
-  </nav>
-</header>
-
-<main>
-
-<!-- PAGE HERO -->
-<section class="page-hero">
-  <div class="container">
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="index.html">Home</a>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
-      <span aria-current="page">About</span>
     </nav>
-    <h1 class="page-hero-title">The <span class="highlight">Story</span> Behind the Sound</h1>
-    <p class="page-hero-subtitle">5+ years of passion, craft, and dedication to professional audio production.</p>
-  </div>
-</section>
+    <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation">
+      <a href="index.html" class="nav-link">Home</a><a href="tracks.html" class="nav-link">Tracks</a>
+      <a href="services.html" class="nav-link">Services</a><a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="contact.html" class="btn btn-primary">Hire Me</a>
+    </nav>
+  </header>
 
-<!-- ABOUT DETAIL -->
-<section class="section" style="padding-top:0">
-  <div class="container">
-    <div class="about-grid">
+  <main>
 
-      <!-- Image -->
-      <div class="about-image-wrap reveal-left">
-        <div class="about-image-frame">
-          <img src="images/Portfolio.jpeg" alt="Kunj Rana — Music Producer in studio" loading="lazy" />
-          <div class="about-image-overlay" aria-hidden="true"></div>
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+          <span aria-current="page">About</span>
+        </nav>
+        <h1 class="page-hero-title">The <span class="highlight">Story</span> Behind the Sound</h1>
+        <p class="page-hero-subtitle">5+ years of passion, craft, and dedication to professional audio production.</p>
+      </div>
+    </section>
+
+    <!-- ABOUT DETAIL -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="about-grid">
+
+          <!-- Image -->
+          <div class="about-image-wrap reveal-left">
+            <div class="about-image-frame">
+              <img src="images/Portfolio.jpeg" alt="Kunj Rana — Music Producer in studio" loading="lazy" />
+              <div class="about-image-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="about-experience-badge">
+              <div class="number" data-count="2" data-suffix="+">2+</div>
+              <div class="label">Years Experience</div>
+            </div>
+            <div class="about-corner-badge" aria-hidden="true"><span>PRO</span><span>AUDIO</span></div>
+          </div>
+
+          <!-- Content -->
+          <div class="about-content reveal-right">
+            <span class="section-tag">About Kunj Rana</span>
+            <h2 class="section-title" style="text-align:left">
+              Crafting <span class="highlight">Sonic Excellence</span>
+            </h2>
+            <p class="about-bio">
+              I'm Kunj Rana, a professional Music Producer and Mixing & Mastering Engineer based in India.
+              My journey with audio began when I was fascinated by how the same song could sound
+              completely different across different systems — and I made it my mission to understand why.
+            </p>
+            <p class="about-bio">
+              Over the past 2+ years, I've had the privilege of working with independent artists,
+              YouTube creators, Bollywood composers, and podcasters across genres ranging from
+              LoFi hip hop to high-energy trap and soulful Bollywood arrangements.
+            </p>
+            <p class="about-bio">
+              My philosophy is simple: every project deserves the same level of care and attention
+              regardless of budget. I believe great sound is accessible, and I work tirelessly to
+              ensure every track I touch sounds its absolute best.
+            </p>
+
+            <div class="about-skills" aria-label="Tools and skills">
+              <span class="skill-tag">Ableton Live 11</span>
+              <span class="skill-tag">FL Studio 21</span>
+              <span class="skill-tag">Pro Tools</span>
+              <span class="skill-tag">iZotope Ozone</span>
+              <span class="skill-tag">iZotope RX</span>
+              <span class="skill-tag">Waves Plugins</span>
+              <span class="skill-tag">FabFilter</span>
+              <span class="skill-tag">Slate Digital</span>
+              <span class="skill-tag">UAD</span>
+            </div>
+
+            <div class="about-stats reveal-stagger">
+              <div class="stat-card"><span class="stat-number" data-count="50" data-suffix="+">50+</span><span
+                  class="stat-label">Songs Mixed</span></div>
+              <div class="stat-card"><span class="stat-number" data-count="20" data-suffix="+">20+</span><span
+                  class="stat-label">Artists</span></div>
+              <div class="stat-card"><span class="stat-number" data-count="30" data-suffix="+">30+</span><span
+                  class="stat-label">Projects</span></div>
+              <div class="stat-card"><span class="stat-number" data-count="2" data-suffix="+">2+</span><span
+                  class="stat-label">Years Exp.</span></div>
+            </div>
+          </div>
+
         </div>
-        <div class="about-experience-badge">
-          <div class="number" data-count="2" data-suffix="+">2+</div>
-          <div class="label">Years Experience</div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" aria-labelledby="skills-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Expertise</span>
+          <h2 class="section-title" id="skills-heading">Technical <span class="highlight">Proficiency</span></h2>
         </div>
-        <div class="about-corner-badge" aria-hidden="true"><span>PRO</span><span>AUDIO</span></div>
-      </div>
-
-      <!-- Content -->
-      <div class="about-content reveal-right">
-        <span class="section-tag">About Kunj Rana</span>
-        <h2 class="section-title" style="text-align:left">
-          Crafting <span class="highlight">Sonic Excellence</span>
-        </h2>
-        <p class="about-bio">
-          I'm Kunj Rana, a professional Music Producer and Mixing & Mastering Engineer based in India.
-          My journey with audio began when I was fascinated by how the same song could sound
-          completely different across different systems — and I made it my mission to understand why.
-        </p>
-        <p class="about-bio">
-          Over the past 2+ years, I've had the privilege of working with independent artists,
-          YouTube creators, Bollywood composers, and podcasters across genres ranging from
-          LoFi hip hop to high-energy trap and soulful Bollywood arrangements.
-        </p>
-        <p class="about-bio">
-          My philosophy is simple: every project deserves the same level of care and attention
-          regardless of budget. I believe great sound is accessible, and I work tirelessly to
-          ensure every track I touch sounds its absolute best.
-        </p>
-
-        <div class="about-skills" aria-label="Tools and skills">
-          <span class="skill-tag">Ableton Live 11</span>
-          <span class="skill-tag">FL Studio 21</span>
-          <span class="skill-tag">Pro Tools</span>
-          <span class="skill-tag">iZotope Ozone</span>
-          <span class="skill-tag">iZotope RX</span>
-          <span class="skill-tag">Waves Plugins</span>
-          <span class="skill-tag">FabFilter</span>
-          <span class="skill-tag">Slate Digital</span>
-          <span class="skill-tag">UAD</span>
+        <div class="skills-grid reveal-stagger">
+          <div class="skill-item">
+            <p class="skill-item-name">Mixing</p>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="--w:0.96"></div>
+            </div>
+            <p class="skill-level">96%</p>
+          </div>
+          <div class="skill-item">
+            <p class="skill-item-name">Mastering</p>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="--w:0.92"></div>
+            </div>
+            <p class="skill-level">92%</p>
+          </div>
+          <div class="skill-item">
+            <p class="skill-item-name">Beat Production</p>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="--w:0.88"></div>
+            </div>
+            <p class="skill-level">88%</p>
+          </div>
+          <div class="skill-item">
+            <p class="skill-item-name">Sound Design</p>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="--w:0.85"></div>
+            </div>
+            <p class="skill-level">85%</p>
+          </div>
+          <div class="skill-item">
+            <p class="skill-item-name">Vocal Processing</p>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="--w:0.90"></div>
+            </div>
+            <p class="skill-level">90%</p>
+          </div>
+          <div class="skill-item">
+            <p class="skill-item-name">Audio Restoration</p>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="--w:0.82"></div>
+            </div>
+            <p class="skill-level">82%</p>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="about-stats reveal-stagger">
-          <div class="stat-card"><span class="stat-number" data-count="50" data-suffix="+">50+</span><span class="stat-label">Songs Mixed</span></div>
-          <div class="stat-card"><span class="stat-number" data-count="20" data-suffix="+">20+</span><span class="stat-label">Artists</span></div>
-          <div class="stat-card"><span class="stat-number" data-count="30" data-suffix="+">30+</span><span class="stat-label">Projects</span></div>
-          <div class="stat-card"><span class="stat-number" data-count="2" data-suffix="+">2+</span><span class="stat-label">Years Exp.</span></div>
+    <!-- TIMELINE -->
+    <section class="section" aria-labelledby="journey-heading">
+      <div class="container" style="max-width:700px">
+        <div class="section-header reveal">
+          <span class="section-tag">Journey</span>
+          <h2 class="section-title" id="journey-heading">My <span class="highlight">Timeline</span></h2>
+        </div>
+        <div class="timeline reveal">
+          <div class="timeline-item">
+            <p class="timeline-year">2019</p>
+            <h3 class="timeline-title">Started the Journey</h3>
+            <p class="timeline-desc">Began learning music production and mixing in bedroom studio using free DAWs and
+              YouTube tutorials. Obsessed with understanding every knob.</p>
+          </div>
+          <div class="timeline-item">
+            <p class="timeline-year">2020</p>
+            <h3 class="timeline-title">First Professional Projects</h3>
+            <p class="timeline-desc">Mixed and mastered first paid projects for independent artists. Built a small but
+              loyal client base through word of mouth.</p>
+          </div>
+          <div class="timeline-item">
+            <p class="timeline-year">2021</p>
+            <h3 class="timeline-title">Studio Upgrade & Genre Expansion</h3>
+            <p class="timeline-desc">Invested in professional monitoring, plugins, and acoustic treatment. Expanded into
+              Bollywood, Hip Hop, and Electronic genres.</p>
+          </div>
+          <div class="timeline-item">
+            <p class="timeline-year">2022</p>
+            <h3 class="timeline-title">100+ Projects Milestone</h3>
+            <p class="timeline-desc">Crossed the 100-project milestone, working with artists across multiple states and
+              countries. Established reputation for fast delivery and quality.</p>
+          </div>
+          <div class="timeline-item">
+            <p class="timeline-year">2023 – Present</p>
+            <h3 class="timeline-title">Full-Time Engineer</h3>
+            <p class="timeline-desc">Transitioned to full-time audio engineering. 200+ songs mixed, 80+ artists served,
+              and counting. Always evolving, always learning.</p>
+          </div>
         </div>
       </div>
+    </section>
 
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="index.html" class="nav-logo"><img src="images/Portfolio.jpeg"
+              class="logo-mark" alt="KR" style="object-fit:cover; border-radius:8px;" /><span
+              class="logo-text">Kunj<span class="logo-dot">.</span></span></a>
+          <p>Professional Music Producer & Mixing/Mastering Engineer.</p>
+          <div class="footer-social"><a href="https://www.instagram.com/r.kunj__/" class="social-link"
+              aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg></a></div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <nav class="footer-links"><a href="index.html" class="footer-link">Home</a><a href="tracks.html"
+              class="footer-link">Tracks</a><a href="services.html" class="footer-link">Services</a><a href="about.html"
+              class="footer-link">About</a><a href="contact.html" class="footer-link">Contact</a></nav>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <nav class="footer-links"><a href="services.html" class="footer-link">Mixing</a><a href="services.html"
+              class="footer-link">Mastering</a><a href="services.html" class="footer-link">Production</a></nav>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; <span id="footer-year">2025</span> <span>Kunj Rana</span>. All rights
+          reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AUDIO PLAYER -->
+  <div id="audio-player" role="region" aria-label="Audio Player" class="hidden">
+    <div class="player-progress-track" aria-label="Track progress">
+      <div class="player-progress-fill"></div>
+    </div>
+    <div class="player-track-info"><img class="player-cover" src="images/default-cover.png" alt="Now playing"
+        loading="lazy" />
+      <div class="player-meta">
+        <p class="player-title">Select a track</p>
+        <p class="player-artist">—</p>
+      </div>
+      <div class="player-eq" aria-hidden="true">
+        <div class="player-eq-bar" style="height:40%"></div>
+        <div class="player-eq-bar" style="height:70%"></div>
+        <div class="player-eq-bar" style="height:100%"></div>
+        <div class="player-eq-bar" style="height:60%"></div>
+      </div>
+    </div>
+    <div class="player-controls">
+      <div class="player-buttons"><button class="ctrl-btn" id="btn-shuffle" aria-label="Shuffle"
+          aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="16 3 21 3 21 8" />
+            <line x1="4" y1="20" x2="21" y2="3" />
+            <polyline points="21 16 21 21 16 21" />
+            <line x1="15" y1="15" x2="21" y2="21" />
+            <line x1="4" y1="4" x2="9" y2="9" />
+          </svg></button><button class="ctrl-btn" id="btn-prev" aria-label="Previous"><svg viewBox="0 0 24 24"
+            fill="currentColor" aria-hidden="true">
+            <polygon points="19 20 9 12 19 4 19 20" />
+            <line x1="5" y1="19" x2="5" y2="5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+          </svg></button><button class="ctrl-btn ctrl-btn-play" id="btn-play" aria-label="Play"><svg viewBox="0 0 24 24"
+            fill="currentColor" aria-hidden="true">
+            <polygon points="5 3 19 12 5 21 5 3" />
+          </svg></button><button class="ctrl-btn" id="btn-next" aria-label="Next"><svg viewBox="0 0 24 24"
+            fill="currentColor" aria-hidden="true">
+            <polygon points="5 4 15 12 5 20 5 4" />
+            <line x1="19" y1="5" x2="19" y2="19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+          </svg></button><button class="ctrl-btn" id="btn-repeat" aria-label="Repeat: off"><svg viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true">
+            <polyline points="17 1 21 5 17 9" />
+            <path d="M3 11V9a4 4 0 0 1 4-4h14" />
+            <polyline points="7 23 3 19 7 15" />
+            <path d="M21 13v2a4 4 0 0 1-4 4H3" />
+          </svg><span class="repeat-one-badge"
+            style="display:none;font-size:9px;font-weight:900;position:absolute;">1</span></button></div>
+      <div class="player-timeline"><span class="player-time start">0:00</span><input type="range" class="player-seek"
+          min="0" max="100" value="0" aria-label="Seek" /><span class="player-time end">0:00</span></div>
+    </div>
+    <div class="player-extras">
+      <div class="player-volume-wrap"><button class="ctrl-btn" id="btn-volume" aria-label="Mute"><svg
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+          </svg></button><input type="range" class="player-volume" min="0" max="1" step="0.01" value="1"
+          aria-label="Volume" /></div><button class="player-speed" aria-label="Speed">1×</button>
     </div>
   </div>
-</section>
 
-<!-- SKILLS -->
-<section class="section" aria-labelledby="skills-heading">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="section-tag">Expertise</span>
-      <h2 class="section-title" id="skills-heading">Technical <span class="highlight">Proficiency</span></h2>
-    </div>
-    <div class="skills-grid reveal-stagger">
-      <div class="skill-item"><p class="skill-item-name">Mixing</p><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:0.96"></div></div><p class="skill-level">96%</p></div>
-      <div class="skill-item"><p class="skill-item-name">Mastering</p><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:0.92"></div></div><p class="skill-level">92%</p></div>
-      <div class="skill-item"><p class="skill-item-name">Beat Production</p><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:0.88"></div></div><p class="skill-level">88%</p></div>
-      <div class="skill-item"><p class="skill-item-name">Sound Design</p><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:0.85"></div></div><p class="skill-level">85%</p></div>
-      <div class="skill-item"><p class="skill-item-name">Vocal Processing</p><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:0.90"></div></div><p class="skill-level">90%</p></div>
-      <div class="skill-item"><p class="skill-item-name">Audio Restoration</p><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:0.82"></div></div><p class="skill-level">82%</p></div>
-    </div>
-  </div>
-</section>
+  <button class="back-to-top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15" />
+    </svg></button>
 
-<!-- TIMELINE -->
-<section class="section" aria-labelledby="journey-heading">
-  <div class="container" style="max-width:700px">
-    <div class="section-header reveal">
-      <span class="section-tag">Journey</span>
-      <h2 class="section-title" id="journey-heading">My <span class="highlight">Timeline</span></h2>
-    </div>
-    <div class="timeline reveal">
-      <div class="timeline-item">
-        <p class="timeline-year">2019</p>
-        <h3 class="timeline-title">Started the Journey</h3>
-        <p class="timeline-desc">Began learning music production and mixing in bedroom studio using free DAWs and YouTube tutorials. Obsessed with understanding every knob.</p>
-      </div>
-      <div class="timeline-item">
-        <p class="timeline-year">2020</p>
-        <h3 class="timeline-title">First Professional Projects</h3>
-        <p class="timeline-desc">Mixed and mastered first paid projects for independent artists. Built a small but loyal client base through word of mouth.</p>
-      </div>
-      <div class="timeline-item">
-        <p class="timeline-year">2021</p>
-        <h3 class="timeline-title">Studio Upgrade & Genre Expansion</h3>
-        <p class="timeline-desc">Invested in professional monitoring, plugins, and acoustic treatment. Expanded into Bollywood, Hip Hop, and Electronic genres.</p>
-      </div>
-      <div class="timeline-item">
-        <p class="timeline-year">2022</p>
-        <h3 class="timeline-title">100+ Projects Milestone</h3>
-        <p class="timeline-desc">Crossed the 100-project milestone, working with artists across multiple states and countries. Established reputation for fast delivery and quality.</p>
-      </div>
-      <div class="timeline-item">
-        <p class="timeline-year">2023 – Present</p>
-        <h3 class="timeline-title">Full-Time Engineer</h3>
-        <p class="timeline-desc">Transitioned to full-time audio engineering. 200+ songs mixed, 80+ artists served, and counting. Always evolving, always learning.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<!-- FOOTER -->
-<footer class="footer" role="contentinfo">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand"><a href="index.html" class="nav-logo"><img src="images/Portfolio.jpeg" class="logo-mark" alt="KR" style="object-fit:cover; border-radius:8px;" /><span class="logo-text">Kunj<span class="logo-dot">.</span></span></a><p>Professional Music Producer & Mixing/Mastering Engineer.</p><div class="footer-social"><a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a></div></div>
-      <div class="footer-col"><h4>Navigation</h4><nav class="footer-links"><a href="index.html" class="footer-link">Home</a><a href="tracks.html" class="footer-link">Tracks</a><a href="services.html" class="footer-link">Services</a><a href="about.html" class="footer-link">About</a><a href="contact.html" class="footer-link">Contact</a></nav></div>
-      <div class="footer-col"><h4>Services</h4><nav class="footer-links"><a href="services.html" class="footer-link">Mixing</a><a href="services.html" class="footer-link">Mastering</a><a href="services.html" class="footer-link">Production</a></nav></div>
-    </div>
-    <div class="footer-bottom"><p class="footer-copyright">&copy; <span id="footer-year">2025</span> <span>Kunj Rana</span>. All rights reserved.</p></div>
-  </div>
-</footer>
-
-<!-- AUDIO PLAYER -->
-<div id="audio-player" role="region" aria-label="Audio Player" class="hidden">
-  <div class="player-progress-track" aria-label="Track progress"><div class="player-progress-fill"></div></div>
-  <div class="player-track-info"><img class="player-cover" src="images/default-cover.png" alt="Now playing" loading="lazy" /><div class="player-meta"><p class="player-title">Select a track</p><p class="player-artist">—</p></div><div class="player-eq" aria-hidden="true"><div class="player-eq-bar" style="height:40%"></div><div class="player-eq-bar" style="height:70%"></div><div class="player-eq-bar" style="height:100%"></div><div class="player-eq-bar" style="height:60%"></div></div></div>
-  <div class="player-controls"><div class="player-buttons"><button class="ctrl-btn" id="btn-shuffle" aria-label="Shuffle" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg></button><button class="ctrl-btn" id="btn-prev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" y1="19" x2="5" y2="5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></button><button class="ctrl-btn ctrl-btn-play" id="btn-play" aria-label="Play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg></button><button class="ctrl-btn" id="btn-next" aria-label="Next"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></button><button class="ctrl-btn" id="btn-repeat" aria-label="Repeat: off"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg><span class="repeat-one-badge" style="display:none;font-size:9px;font-weight:900;position:absolute;">1</span></button></div><div class="player-timeline"><span class="player-time start">0:00</span><input type="range" class="player-seek" min="0" max="100" value="0" aria-label="Seek" /><span class="player-time end">0:00</span></div></div>
-  <div class="player-extras"><div class="player-volume-wrap"><button class="ctrl-btn" id="btn-volume" aria-label="Mute"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button><input type="range" class="player-volume" min="0" max="1" step="0.01" value="1" aria-label="Volume" /></div><button class="player-speed" aria-label="Speed">1×</button></div>
-</div>
-
-<button class="back-to-top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg></button>
-
-<script>
-  document.getElementById('footer-year').textContent = new Date().getFullYear();
-  // Skill bar IntersectionObserver
-  const skillObs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        const fill = e.target.querySelector('.skill-bar-fill');
-        if (fill) fill.style.width = (parseFloat(fill.style.getPropertyValue('--w') || 0.8) * 100) + '%';
-        skillObs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.4 });
-  document.querySelectorAll('.skill-item').forEach(el => skillObs.observe(el));
-</script>
-<script type="module" src="js/app.js"></script>
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+    // Skill bar IntersectionObserver
+    const skillObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          const fill = e.target.querySelector('.skill-bar-fill');
+          if (fill) fill.style.width = (parseFloat(fill.style.getPropertyValue('--w') || 0.8) * 100) + '%';
+          skillObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    document.querySelectorAll('.skill-item').forEach(el => skillObs.observe(el));
+  </script>
+  <script type="module" src="js/app.js"></script>
 </body>
+
 </html>
