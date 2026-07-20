@@ -139,11 +139,19 @@ export function deleteBA(id) {
   return fetchWithAuth(`/before-after/${id}`, { method: 'DELETE' });
 }
 
-export function createBA(formData) {
-  return fetchWithAuth('/before-after', { method: 'POST', body: formData });
+export function createBA(data) {
+  return fetchWithAuth('/before-after', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
 }
-export function updateBA(id, formData) {
-  return fetchWithAuth(`/before-after/${id}`, { method: 'PUT', body: formData });
+export function updateBA(id, data) {
+  return fetchWithAuth(`/before-after/${id}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
 }
 
 // ─── Contacts ───────────────────────────────────────

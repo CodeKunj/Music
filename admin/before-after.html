@@ -122,7 +122,7 @@
 
 <script type="module">
   import { requireAuth } from './js/admin-auth.js';
-  import { getAllBAs, createBA, updateBA, deleteBA } from './js/admin-api.js';
+  import { getAllBAs, createBA, updateBA, deleteBA, uploadFileToSupabase } from './js/admin-api.js';
   import { toast, confirm, openModal, closeModal, setActiveSidebarLink, initMobileSidebar, initUploadZone, createAudioPreview } from './js/admin-ui.js';
 
   await requireAuth();
@@ -194,13 +194,35 @@
   document.getElementById('save-btn').addEventListener('click', async () => {
     if (!document.getElementById('f-name').value.trim()) return toast('Name required', 'error');
     
-    const form = new FormData(document.getElementById('ba-form'));
+    const formEl = document.getElementById('ba-form');
+    const formData = new FormData(formEl);
     const btn = document.getElementById('save-btn');
     btn.disabled = true;
+    btn.textContent = editingId ? 'Updating...' : 'Saving...';
     
     try {
-      if (editingId) await updateBA(editingId, form);
-      else await createBA(form);
+      const payload = {
+        project_name: formData.get('project_name')?.trim(),
+        artist: formData.get('artist')?.trim()
+      };
+
+      const beforeFile = formEl.querySelector('input[name="before"]').files[0];
+      if (beforeFile) {
+        btn.textContent = 'Uploading before audio...';
+        payload.before_audio_url = await uploadFileToSupabase(beforeFile, 'audio');
+      }
+
+      const afterFile = formEl.querySelector('input[name="after"]').files[0];
+      if (afterFile) {
+        btn.textContent = 'Uploading after audio...';
+        payload.after_audio_url = await uploadFileToSupabase(afterFile, 'audio');
+      }
+
+      btn.textContent = editingId ? 'Updating record...' : 'Saving record...';
+
+      if (editingId) await updateBA(editingId, payload);
+      else await createBA(payload);
+      
       toast('Saved successfully', 'success');
       closeModal(modal);
       loadData();
@@ -208,6 +230,7 @@
       toast(e.message, 'error');
     } finally {
       btn.disabled = false;
+      btn.textContent = 'Save';
     }
   });
 

@@ -315,23 +315,10 @@ router.get('/before-after', async (_req, res) => {
   res.json(data);
 });
 
-router.post('/before-after', upload.fields(baFields), async (req, res) => {
+router.post('/before-after', async (req, res) => {
   try {
-    const { project_name, artist } = req.body;
+    const { project_name, artist, before_audio_url, after_audio_url } = req.body;
     if (!project_name) return res.status(400).json({ success: false, error: 'Project name required.' });
-
-    const files = req.files || {};
-    const ts = Date.now();
-    let before_audio_url = null, after_audio_url = null;
-
-    if (files.before?.[0]) {
-      const f = files.before[0];
-      before_audio_url = await uploadFile('audio', `ba/${ts}_before_${sanitizeFilename(f.originalname)}`, f.buffer, f.mimetype);
-    }
-    if (files.after?.[0]) {
-      const f = files.after[0];
-      after_audio_url = await uploadFile('audio', `ba/${ts}_after_${sanitizeFilename(f.originalname)}`, f.buffer, f.mimetype);
-    }
 
     const { data, error } = await supabase
       .from('before_after_projects')
@@ -345,27 +332,26 @@ router.post('/before-after', upload.fields(baFields), async (req, res) => {
   }
 });
 
-router.put('/before-after/:id', upload.fields(baFields), async (req, res) => {
+router.put('/before-after/:id', async (req, res) => {
   try {
-    const { project_name, artist } = req.body;
+    const { project_name, artist, before_audio_url, after_audio_url } = req.body;
     const updates = {};
     if (project_name) updates.project_name = project_name;
     if (artist !== undefined) updates.artist = artist;
 
-    const files = req.files || {};
-    const ts = Date.now();
+    const { data: existing } = await supabase
+      .from('before_after_projects')
+      .select('before_audio_url, after_audio_url')
+      .eq('id', req.params.id)
+      .single();
 
-    if (files.before?.[0]) {
-      const f = files.before[0];
-      updates.before_audio_url = await uploadFile(
-        'audio', `ba/${ts}_before_${sanitizeFilename(f.originalname)}`, f.buffer, f.mimetype
-      );
+    if (before_audio_url) {
+      if (existing?.before_audio_url) await deleteFile('audio', existing.before_audio_url);
+      updates.before_audio_url = before_audio_url;
     }
-    if (files.after?.[0]) {
-      const f = files.after[0];
-      updates.after_audio_url = await uploadFile(
-        'audio', `ba/${ts}_after_${sanitizeFilename(f.originalname)}`, f.buffer, f.mimetype
-      );
+    if (after_audio_url) {
+      if (existing?.after_audio_url) await deleteFile('audio', existing.after_audio_url);
+      updates.after_audio_url = after_audio_url;
     }
 
     const { data, error } = await supabase
