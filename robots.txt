@@ -1,0 +1,10 @@
+# Kunj Rana Music — robots.txt
+# Allow all search engines to crawl the full site
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /backend/
+
+# Sitemap location
+Sitemap: https://kunjmusic.vercel.app/sitemap.xml
