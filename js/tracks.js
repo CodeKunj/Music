@@ -163,7 +163,7 @@ function bindCardEvents(tracks) {
       const id = btn.dataset.id;
       const track = tracks.find((t) => t.id === id);
       if (track) {
-        loadQueue(tracks, tracks.indexOf(track));
+        loadQueue(tracks, tracks.indexOf(track), true);
       }
     });
   });
@@ -175,7 +175,7 @@ function bindCardEvents(tracks) {
       const id = card.dataset.id;
       const track = tracks.find((t) => t.id === id);
       if (track) {
-        loadQueue(tracks, tracks.indexOf(track));
+        loadQueue(tracks, tracks.indexOf(track), true);
       }
     });
 
