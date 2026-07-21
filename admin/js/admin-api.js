@@ -168,3 +168,26 @@ export function markContactRead(id) {
 export function deleteContact(id) {
   return fetchWithAuth(`/contacts/${id}`, { method: 'DELETE' });
 }
+
+// ─── Gallery ─────────────────────────────────────────
+export function getAllGallery() {
+  return fetchWithAuth('/gallery');
+}
+export function createGalleryItem(data) {
+  return fetchWithAuth('/gallery', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+}
+export function updateGalleryItem(id, data) {
+  return fetchWithAuth(`/gallery/${id}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+}
+export function deleteGalleryItem(id) {
+  return fetchWithAuth(`/gallery/${id}`, { method: 'DELETE' });
+}
+

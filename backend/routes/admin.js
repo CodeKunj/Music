@@ -407,4 +407,108 @@ router.delete('/contacts/:id', async (req, res) => {
   res.json({ success: true });
 });
 
+// ══════════════════════════════════════════════════════════════
+//  GALLERY ITEMS
+// ══════════════════════════════════════════════════════════════
+
+router.get('/gallery', async (_req, res) => {
+  const { data, error } = await supabase
+    .from('gallery_items')
+    .select('*')
+    .order('sort_order', { ascending: true })
+    .order('created_at', { ascending: false });
+  if (error) return res.status(500).json({ success: false, error: error.message });
+  res.json(data);
+});
+
+router.post('/gallery', async (req, res) => {
+  try {
+    const { title, category, description, image_url, project_link, sort_order, is_active } = req.body;
+    if (!title?.trim()) return res.status(400).json({ success: false, error: 'Title is required.' });
+    if (!image_url)     return res.status(400).json({ success: false, error: 'Image URL is required.' });
+
+    const { data, error } = await supabase
+      .from('gallery_items')
+      .insert({
+        title:        title.trim(),
+        category:     (category || 'Studio').trim(),
+        description:  description?.trim() || null,
+        image_url,
+        project_link: project_link?.trim() || null,
+        sort_order:   parseInt(sort_order) || 0,
+        is_active:    is_active !== false && is_active !== 'false',
+      })
+      .select()
+      .single();
+
+    if (error) throw error;
+    res.status(201).json({ success: true, data });
+  } catch (err) {
+    console.error('POST /admin/gallery error:', err);
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+router.put('/gallery/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { title, category, description, image_url, project_link, sort_order, is_active } = req.body;
+
+    const { data: existing, error: fetchErr } = await supabase
+      .from('gallery_items')
+      .select('image_url')
+      .eq('id', id)
+      .single();
+
+    if (fetchErr || !existing) {
+      return res.status(404).json({ success: false, error: 'Gallery item not found.' });
+    }
+
+    const updates = {};
+    if (title !== undefined)        updates.title        = title.trim();
+    if (category !== undefined)     updates.category     = category.trim();
+    if (description !== undefined)  updates.description  = description?.trim() || null;
+    if (project_link !== undefined) updates.project_link = project_link?.trim() || null;
+    if (sort_order !== undefined)   updates.sort_order   = parseInt(sort_order) || 0;
+    if (is_active !== undefined)    updates.is_active    = is_active !== false && is_active !== 'false';
+
+    if (image_url && image_url !== existing.image_url) {
+      await deleteFile('gallery', existing.image_url);
+      updates.image_url = image_url;
+    }
+
+    const { data, error } = await supabase
+      .from('gallery_items')
+      .update(updates)
+      .eq('id', id)
+      .select()
+      .single();
+
+    if (error) throw error;
+    res.json({ success: true, data });
+  } catch (err) {
+    console.error('PUT /admin/gallery error:', err);
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+router.delete('/gallery/:id', async (req, res) => {
+  try {
+    const { data: item } = await supabase
+      .from('gallery_items')
+      .select('image_url')
+      .eq('id', req.params.id)
+      .single();
+
+    if (item?.image_url) await deleteFile('gallery', item.image_url);
+
+    const { error } = await supabase.from('gallery_items').delete().eq('id', req.params.id);
+    if (error) return res.status(500).json({ success: false, error: error.message });
+    res.json({ success: true, message: 'Gallery item deleted.' });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
 export default router;
+

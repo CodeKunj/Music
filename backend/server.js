@@ -15,6 +15,7 @@ import testimonialsRouter from './routes/testimonials.js';
 import beforeAfterRouter  from './routes/beforeAfter.js';
 import contactRouter      from './routes/contact.js';
 import adminRouter        from './routes/admin.js';
+import galleryRouter      from './routes/gallery.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app  = express();
@@ -40,6 +41,7 @@ app.use('/api/services',     servicesRouter);
 app.use('/api/testimonials', testimonialsRouter);
 app.use('/api/before-after', beforeAfterRouter);
 app.use('/api/contact',      contactRouter);
+app.use('/api/gallery',      galleryRouter);
 app.use('/api/admin',        adminRouter);
 
 // ── Health Check ──────────────────────────────────────────────
