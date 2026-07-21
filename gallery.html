@@ -63,15 +63,19 @@
     }
 
     .gallery-hero-orb-1 {
-      width: 500px; height: 500px;
+      width: 500px;
+      height: 500px;
       background: var(--color-accent);
-      top: -200px; left: -100px;
+      top: -200px;
+      left: -100px;
     }
 
     .gallery-hero-orb-2 {
-      width: 350px; height: 350px;
+      width: 350px;
+      height: 350px;
       background: #C49162;
-      bottom: -100px; right: -80px;
+      bottom: -100px;
+      right: -80px;
     }
 
     .gallery-hero .container {
@@ -96,7 +100,8 @@
     }
 
     .gallery-hero-badge-dot {
-      width: 6px; height: 6px;
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
       background: var(--color-accent-light);
       animation: pulse 2s infinite;
@@ -135,11 +140,15 @@
     }
 
     @media (max-width: 900px) {
-      .gallery-grid { columns: 2; }
+      .gallery-grid {
+        columns: 2;
+      }
     }
 
     @media (max-width: 560px) {
-      .gallery-grid { columns: 1; }
+      .gallery-grid {
+        columns: 1;
+      }
     }
 
     /* Cards */
@@ -161,12 +170,15 @@
     }
 
     @keyframes galleryCardIn {
-      to { opacity: 1; transform: translateY(0); }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .gallery-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(139, 94, 60, 0.25);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(139, 94, 60, 0.25);
       border-color: rgba(139, 94, 60, 0.35);
     }
 
@@ -188,7 +200,7 @@
     .gallery-card-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(139,94,60,0.3) 100%);
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(139, 94, 60, 0.3) 100%);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -240,8 +252,17 @@
       column-gap: var(--space-5);
     }
 
-    @media (max-width: 900px) { .gallery-skeleton { columns: 2; } }
-    @media (max-width: 560px) { .gallery-skeleton { columns: 1; } }
+    @media (max-width: 900px) {
+      .gallery-skeleton {
+        columns: 2;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .gallery-skeleton {
+        columns: 1;
+      }
+    }
 
     .skel-card {
       break-inside: avoid;
@@ -253,25 +274,36 @@
     }
 
     .skel-img {
-      background: rgba(255,255,255,0.06);
+      background: rgba(255, 255, 255, 0.06);
       animation: shimmer 1.4s infinite;
     }
 
-    .skel-body { padding: var(--space-4) var(--space-5); }
+    .skel-body {
+      padding: var(--space-4) var(--space-5);
+    }
 
     .skel-line {
       height: 10px;
       border-radius: 4px;
-      background: rgba(255,255,255,0.06);
+      background: rgba(255, 255, 255, 0.06);
       animation: shimmer 1.4s infinite;
       margin-bottom: var(--space-2);
     }
 
-    .skel-line.short { width: 55%; }
+    .skel-line.short {
+      width: 55%;
+    }
 
     @keyframes shimmer {
-      0%, 100% { opacity: 0.5; }
-      50% { opacity: 1; }
+
+      0%,
+      100% {
+        opacity: 0.5;
+      }
+
+      50% {
+        opacity: 1;
+      }
     }
 
     /* Empty state */
@@ -300,7 +332,7 @@
       position: fixed;
       inset: 0;
       z-index: 9999;
-      background: rgba(0,0,0,0.92);
+      background: rgba(0, 0, 0, 0.92);
       display: none;
       align-items: center;
       justify-content: center;
@@ -314,8 +346,13 @@
     }
 
     @keyframes lbFadeIn {
-      from { opacity: 0; }
-      to   { opacity: 1; }
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
     }
 
     .lightbox-inner {
@@ -388,7 +425,10 @@
       align-self: flex-start;
     }
 
-    #lb-link:hover { opacity: 0.85; transform: translateY(-2px); }
+    #lb-link:hover {
+      opacity: 0.85;
+      transform: translateY(-2px);
+    }
 
     .lightbox-nav {
       display: flex;
@@ -397,7 +437,8 @@
     }
 
     .lb-nav-btn {
-      width: 42px; height: 42px;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
       border: 1px solid var(--color-border);
       background: var(--color-card);
@@ -414,13 +455,17 @@
       background: rgba(139, 94, 60, 0.15);
     }
 
-    .lb-nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+    .lb-nav-btn:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
 
     .lightbox-close {
       position: absolute;
       top: -16px;
       right: -16px;
-      width: 40px; height: 40px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       border: 1px solid var(--color-border);
       background: var(--color-card);
@@ -444,9 +489,20 @@
         flex-direction: column;
         overflow-y: auto;
       }
-      .lightbox-info { flex: none; }
-      #lb-img { max-height: 55vw; width: 100%; }
-      .lightbox-close { top: 8px; right: 8px; }
+
+      .lightbox-info {
+        flex: none;
+      }
+
+      #lb-img {
+        max-height: 55vw;
+        width: 100%;
+      }
+
+      .lightbox-close {
+        top: 8px;
+        right: 8px;
+      }
     }
   </style>
 </head>
@@ -521,12 +577,48 @@
 
         <!-- Skeleton loaders -->
         <div class="gallery-skeleton" id="gallery-skeleton" aria-hidden="true">
-          <div class="skel-card"><div class="skel-img" style="height:220px"></div><div class="skel-body"><div class="skel-line short"></div><div class="skel-line" style="width:80%"></div></div></div>
-          <div class="skel-card"><div class="skel-img" style="height:300px"></div><div class="skel-body"><div class="skel-line short"></div><div class="skel-line" style="width:90%"></div></div></div>
-          <div class="skel-card"><div class="skel-img" style="height:180px"></div><div class="skel-body"><div class="skel-line short"></div><div class="skel-line" style="width:70%"></div></div></div>
-          <div class="skel-card"><div class="skel-img" style="height:260px"></div><div class="skel-body"><div class="skel-line short"></div><div class="skel-line" style="width:85%"></div></div></div>
-          <div class="skel-card"><div class="skel-img" style="height:200px"></div><div class="skel-body"><div class="skel-line short"></div><div class="skel-line" style="width:75%"></div></div></div>
-          <div class="skel-card"><div class="skel-img" style="height:240px"></div><div class="skel-body"><div class="skel-line short"></div><div class="skel-line" style="width:88%"></div></div></div>
+          <div class="skel-card">
+            <div class="skel-img" style="height:220px"></div>
+            <div class="skel-body">
+              <div class="skel-line short"></div>
+              <div class="skel-line" style="width:80%"></div>
+            </div>
+          </div>
+          <div class="skel-card">
+            <div class="skel-img" style="height:300px"></div>
+            <div class="skel-body">
+              <div class="skel-line short"></div>
+              <div class="skel-line" style="width:90%"></div>
+            </div>
+          </div>
+          <div class="skel-card">
+            <div class="skel-img" style="height:180px"></div>
+            <div class="skel-body">
+              <div class="skel-line short"></div>
+              <div class="skel-line" style="width:70%"></div>
+            </div>
+          </div>
+          <div class="skel-card">
+            <div class="skel-img" style="height:260px"></div>
+            <div class="skel-body">
+              <div class="skel-line short"></div>
+              <div class="skel-line" style="width:85%"></div>
+            </div>
+          </div>
+          <div class="skel-card">
+            <div class="skel-img" style="height:200px"></div>
+            <div class="skel-body">
+              <div class="skel-line short"></div>
+              <div class="skel-line" style="width:75%"></div>
+            </div>
+          </div>
+          <div class="skel-card">
+            <div class="skel-img" style="height:240px"></div>
+            <div class="skel-body">
+              <div class="skel-line short"></div>
+              <div class="skel-line" style="width:88%"></div>
+            </div>
+          </div>
         </div>
 
         <!-- Gallery grid (filled by JS) -->
@@ -557,14 +649,27 @@
           </a>
           <p>Professional Music Producer &amp; Mixing/Mastering Engineer. Turning your vision into sonic reality.</p>
           <div class="footer-social" aria-label="Social media links">
-            <a href="https://www.instagram.com/r.kunj__/" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            <a href="https://www.instagram.com/r.kunj__/" class="social-link" aria-label="Instagram" target="_blank"
+              rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
             </a>
-            <a href="https://www.youtube.com/@KRbits" class="social-link" aria-label="YouTube" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+            <a href="https://www.youtube.com/@KRbits" class="social-link" aria-label="YouTube" target="_blank"
+              rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+                <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" />
+              </svg>
             </a>
-            <a href="mailto:kunj@example.com" class="social-link" aria-label="Email" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <a href="mailto:kunjr1105@gmail.com" class="social-link" aria-label="Email" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                 <polyline points="22,6 12,13 2,6" />
               </svg>
@@ -612,7 +717,11 @@
   <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
     <div class="lightbox-inner">
       <button class="lightbox-close" id="lb-close" aria-label="Close lightbox">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" width="18" height="18"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+          aria-hidden="true" width="18" height="18">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
       </button>
 
       <div class="lightbox-img-wrap">
@@ -624,15 +733,26 @@
         <h2 id="lb-title"></h2>
         <p id="lb-description"></p>
         <a id="lb-link" href="#" target="_blank" rel="noopener" style="display:none">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" width="14" height="14" aria-hidden="true">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+            <polyline points="15 3 21 3 21 9" />
+            <line x1="10" y1="14" x2="21" y2="3" />
+          </svg>
           View Project
         </a>
         <div class="lightbox-nav">
           <button class="lb-nav-btn" id="lb-prev" aria-label="Previous image">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="16" height="16" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+              width="16" height="16" aria-hidden="true">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
           </button>
           <button class="lb-nav-btn" id="lb-next" aria-label="Next image">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="16" height="16" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+              width="16" height="16" aria-hidden="true">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
           </button>
         </div>
       </div>
@@ -731,7 +851,10 @@
 
   <!-- Back to Top -->
   <button class="back-to-top" aria-label="Back to top">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+      stroke-linejoin="round" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15" />
+    </svg>
   </button>
 
   <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
