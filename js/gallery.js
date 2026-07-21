@@ -8,13 +8,11 @@ const API_BASE = (typeof window !== 'undefined' && window.location.hostname === 
 
 // ── State ───────────────────────────────────────────────────────
 let allItems   = [];
-let activeCategory = 'all';
 
 // ── DOM Refs ────────────────────────────────────────────────────
 const grid      = document.getElementById('gallery-grid');
 const skeleton  = document.getElementById('gallery-skeleton');
 const emptyMsg  = document.getElementById('gallery-empty');
-const filterBtns = document.querySelectorAll('.filter-btn');
 const lightbox  = document.getElementById('lightbox');
 const lbImg     = document.getElementById('lb-img');
 const lbTitle   = document.getElementById('lb-title');
@@ -26,7 +24,7 @@ const lbPrev    = document.getElementById('lb-prev');
 const lbNext    = document.getElementById('lb-next');
 
 let lbCurrentIndex = 0;
-let filteredItems  = [];
+let displayedItems = [];
 
 // ── Fetch Gallery Items ─────────────────────────────────────────
 async function loadGallery() {
@@ -53,6 +51,7 @@ function renderGrid(items) {
   grid.innerHTML = '';
 
   filteredItems = items;
+  displayedItems = items;
 
   if (!items.length) {
     if (emptyMsg) emptyMsg.style.display = 'block';
@@ -79,7 +78,6 @@ function renderGrid(items) {
         </div>
       </div>
       <div class="gallery-card-info">
-        <span class="gallery-card-category">${escHtml(item.category)}</span>
         <h3 class="gallery-card-title">${escHtml(item.title)}</h3>
         ${item.description ? `<p class="gallery-card-desc">${escHtml(item.description)}</p>` : ''}
       </div>
@@ -103,20 +101,6 @@ function renderGrid(items) {
   });
 }
 
-// ── Filter ──────────────────────────────────────────────────────
-filterBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    filterBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    activeCategory = btn.dataset.category;
-
-    const filtered = activeCategory === 'all'
-      ? allItems
-      : allItems.filter(i => i.category.toLowerCase() === activeCategory.toLowerCase());
-
-    renderGrid(filtered);
-  });
-});
 
 // ── Lightbox ────────────────────────────────────────────────────
 function openLightbox(idx) {
@@ -128,13 +112,13 @@ function openLightbox(idx) {
 }
 
 function updateLightbox() {
-  const item = filteredItems[lbCurrentIndex];
+  const item = displayedItems[lbCurrentIndex];
   if (!item) return;
 
   lbImg.src       = item.imageUrl;
   lbImg.alt       = item.title;
   lbTitle.textContent = item.title;
-  lbCat.textContent   = item.category;
+  if (lbCat) lbCat.textContent = '';
   lbDesc.textContent  = item.description || '';
   lbDesc.style.display = item.description ? 'block' : 'none';
 
@@ -148,7 +132,7 @@ function updateLightbox() {
   }
 
   lbPrev.disabled = lbCurrentIndex === 0;
-  lbNext.disabled = lbCurrentIndex === filteredItems.length - 1;
+  lbNext.disabled = lbCurrentIndex === displayedItems.length - 1;
 }
 
 function closeLightbox() {
@@ -173,7 +157,7 @@ document.addEventListener('keydown', (e) => {
   if (!lightbox.classList.contains('open')) return;
   if (e.key === 'Escape')     closeLightbox();
   if (e.key === 'ArrowLeft')  { if (lbCurrentIndex > 0) { lbCurrentIndex--; updateLightbox(); } }
-  if (e.key === 'ArrowRight') { if (lbCurrentIndex < filteredItems.length - 1) { lbCurrentIndex++; updateLightbox(); } }
+  if (e.key === 'ArrowRight') { if (lbCurrentIndex < displayedItems.length - 1) { lbCurrentIndex++; updateLightbox(); } }
 });
 
 // ── Helpers ─────────────────────────────────────────────────────
