@@ -40,7 +40,23 @@ export async function initTracks() {
     allTracks = await getTracks();
     filteredTracks = [...allTracks];
     renderTracks(filteredTracks);
-    loadQueue(filteredTracks, 0);
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    const sharedTrackId = urlParams.get('track');
+    let startIndex = 0;
+    
+    if (sharedTrackId) {
+      const idx = filteredTracks.findIndex(t => t.id === sharedTrackId);
+      if (idx !== -1) {
+        startIndex = idx;
+        setTimeout(() => {
+          const card = document.querySelector(`.track-card[data-id="${sharedTrackId}"]`);
+          if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 300);
+      }
+    }
+    
+    loadQueue(filteredTracks, startIndex);
   } catch (err) {
     console.error('Failed to load tracks:', err);
     renderErrorState(grid, initTracks, err.message);

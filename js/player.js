@@ -47,8 +47,15 @@ export function initPlayer() {
   volumeBtn     = playerEl.querySelector('#btn-volume');
   volumeInput   = playerEl.querySelector('.player-volume');
   speedBtn      = playerEl.querySelector('.player-speed');
+  const closeBtn  = playerEl.querySelector('#btn-close-player');
 
   bindEvents();
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      audio.pause();
+      playerEl.classList.add('hidden');
+    });
+  }
   restoreFromSession();
   bindKeyboard();
 
@@ -125,13 +132,14 @@ function bindKeyboard() {
 // ── Public API ─────────────────────────────────────────────
 
 /**
- * Load a list of tracks into the queue and start playing from index.
+ * Load a list of tracks into the queue and load the track at index.
  * @param {import('./api.js').Track[]} tracks
  * @param {number} [startIndex=0]
+ * @param {boolean} [autoPlay=false]
  */
-export function loadQueue(tracks, startIndex = 0) {
+export function loadQueue(tracks, startIndex = 0, autoPlay = false) {
   state.queue = [...tracks];
-  playAt(startIndex);
+  loadAt(startIndex, autoPlay);
 }
 
 /**
@@ -141,10 +149,10 @@ export function loadQueue(tracks, startIndex = 0) {
 export function playTrack(track) {
   const idx = state.queue.findIndex((t) => t.id === track.id);
   if (idx !== -1) {
-    playAt(idx);
+    loadAt(idx, true);
   } else {
     state.queue.push(track);
-    playAt(state.queue.length - 1);
+    loadAt(state.queue.length - 1, true);
   }
 }
 
@@ -162,7 +170,7 @@ export function addToQueue(track) {
 
 // ── Internal Playback ──────────────────────────────────────
 
-function playAt(index) {
+function loadAt(index, autoPlay = true) {
   if (index < 0 || index >= state.queue.length) return;
   state.currentIndex = index;
   const track = state.queue[index];
@@ -174,12 +182,14 @@ function playAt(index) {
   updatePlayerUI(track);
   playerEl?.classList.remove('hidden');
 
-  audio.play().then(() => {
-    if (track.id) recordPlay(track.id);
-  }).catch((err) => {
-    console.warn('Playback failed:', err);
-    toast('Unable to play this track.', 'error');
-  });
+  if (autoPlay) {
+    audio.play().then(() => {
+      if (track.id) recordPlay(track.id);
+    }).catch((err) => {
+      console.warn('Playback failed:', err);
+      toast('Unable to play this track.', 'error');
+    });
+  }
 
   saveToSession();
 }
@@ -205,7 +215,7 @@ function playNext() {
       }
     }
   }
-  playAt(nextIdx);
+  loadAt(nextIdx, true);
 }
 
 function playPrev() {
@@ -217,7 +227,7 @@ function playPrev() {
   }
   let prevIdx = state.currentIndex - 1;
   if (prevIdx < 0) prevIdx = state.repeatMode === 'all' ? state.queue.length - 1 : 0;
-  playAt(prevIdx);
+  loadAt(prevIdx, true);
 }
 
 function onEnded() {

@@ -270,10 +270,11 @@ export function truncate(str, maxLength) {
  * @param {{ title: string, artist: string }} track
  */
 export async function shareTrack(track) {
+  const trackUrl = `${window.location.origin}/tracks.html?track=${track.id}`;
   const shareData = {
     title: `${track.title} — ${track.artist}`,
     text: `Check out "${track.title}" by ${track.artist} on Kunj Rana's portfolio!`,
-    url: window.location.href,
+    url: trackUrl,
   };
 
   try {
